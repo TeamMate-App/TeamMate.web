@@ -31,7 +31,7 @@ const Home = () => {
                             <img className="bd-placeholder-img"src={Image} width="100%" height="100%"  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
                             <div className="container">
                                 <div className="carousel-caption text-start">
-                                    <h1>Teammate</h1>
+                                    <h1>TeamMate</h1>
                                     <p><strong>Encuentra o crea el deporte que quieres practicar</strong></p>
                                     <p><a className="btn btn-lg btn-primary" href="#">Sign up today</a></p>
                                 </div>
