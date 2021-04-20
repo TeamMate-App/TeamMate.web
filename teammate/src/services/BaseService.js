@@ -1,11 +1,31 @@
-import axios from 'axios'
+import axios from "axios";
+import { getAccessToken, logout } from "../stores/AccessTokenStore";
 
-const http = axios.create({
-    baseURL:'https://teammate.com' //url a la que hacer las peticiones
-})
+export const create = (opts = {}) => {
+  const http = axios.create({
+    baseURL: "http://localhost:3001/api", //pondremos la dirección de heroku
+    ...opts,
+  });
 
-//realizar las peticiones
+  http.interceptors.request.use((request) => {
+    //send token as authirization
+    if (opts.useAccessToken !== false) {
+      request.headers.common.Authorization = `Bearer ${getAccessToken()}`;
+    } else {
+      delete request.headers.common.Authorization;
+    }
 
-//export const blablabla = ()=> {
-// return http.get o post o put etc ('/direccion de la petición')
-//}
+    return request;
+  });
+
+  http.interceptors.response.use(
+    (response) => response.data,
+    (error) => {
+      if (error.response && [401, 403].includes(error.response.status)) {
+        logout();
+      }
+      return Promise.reject(error);
+    }
+  );
+  return http
+};

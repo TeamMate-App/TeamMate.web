@@ -19,7 +19,7 @@ const Home = () => {
 
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img className="bd-placeholder-img" src={Image} width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+                        <img className="bd-placeholder-img" src={Image} width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="ksjd"></img>
                         <div className="container">
                             <div className="carousel-caption text-start">
                                 <h1>TeamMate</h1>
