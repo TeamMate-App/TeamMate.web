@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Login/Login.css";
 import { Link, useHistory } from "react-router-dom";
 import Logo from "../../assets/Movistar-Logo.png";
-import { login } from "../../services/AuthService.js";
+import { register } from "../../services/UserService.js";
 import { setAccessToken } from "../../stores/AccessTokenStore";
 
 // eslint-disable-next-line no-useless-escape
@@ -33,8 +33,7 @@ const validators = {
   },
 };
 
-const Login = ({ doLogin }) => {
- 
+const Login = ({ createUser }) => {
   const { push } = useHistory();
   const [state, setState] = useState({
     fields: {
@@ -55,14 +54,15 @@ const Login = ({ doLogin }) => {
   };
 
   const onSubmit = (e) => {
+    console.log("submit")
     const { fields } = state;
     e.preventDefault();
 
     if (isValid()) {
-      login(fields).then((response) => {
-        console.log(doLogin());
-        setAccessToken(response.access_token)
-        doLogin().then(() => push("/"));
+      register(fields).then((response) => {
+        console.log(createUser());
+        setAccessToken(response.access_token);
+        createUser().then(() => push("/"));
       });
     }
   };
@@ -106,12 +106,12 @@ const Login = ({ doLogin }) => {
   return (
     <div className="login">
       <Link to="/" className="">
-        <span className="">Home</span>
+        <span className="">Home </span>
       </Link>
       <main className="form-signin">
         <form onSubmit={onSubmit}>
           <img className="mb-4" src={Logo} alt="" width="72" height="57" />
-          <h1 className="h3 mb-3 fw-normal">Loguear cuenta</h1>
+          <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
           <div className="form-floating">
             <label htmlFor="floatingInput">Email address</label>
@@ -154,7 +154,7 @@ const Login = ({ doLogin }) => {
 
           <div className="checkbox mb-3 mt-4">
             <label className="">
-              <input type="checkbox" value="remember-me" /> Remember me{" "}
+              <input type="checkbox" value="remember-me" /> Rememsssssssssber me{" "}
             </label>
           </div>
           <button
@@ -162,7 +162,7 @@ const Login = ({ doLogin }) => {
             type="submit"
             disabled={!isValid}
           >
-            Login
+            Register
           </button>
           <p className="mt-5 mb-3 text-muted">© 2021</p>
         </form>
