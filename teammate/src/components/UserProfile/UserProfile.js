@@ -14,7 +14,7 @@ const UserProfile = () => {
             <div className="page-heading">
                 <div className="media clearfix">
                     <div className="media-left pr30">
-                        <a href="#">
+                        <a href="/">
                             <img className="media-object mw150" src={Logo} alt="..." width="100" height="100"/>
                         </a>
                     </div>
@@ -26,52 +26,52 @@ const UserProfile = () => {
                         <div className="media-links">
                             <ul className="list-inline list-unstyled">
                                 <li>
-                                    <a href="#" title="facebook link">
+                                    <a href="/" title="facebook link">
                                         <span className="fa fa-facebook-square fs35 text-primary"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" title="twitter link">
+                                    <a href="/" title="twitter link">
                                         <span className="fa fa-twitter-square fs35 text-info"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" title="google plus link">
+                                    <a href="/" title="google plus link">
                                         <span className="fa fa-google-plus-square fs35 text-danger"></span>
                                     </a>
                                 </li>
                                 <li className="hidden">
-                                    <a href="#" title="behance link">
+                                    <a href="/" title="behance link">
                                         <span className="fa fa-behance-square fs35 text-primary"></span>
                                     </a>
                                 </li>
                                 <li className="hidden">
-                                    <a href="#" title="pinterest link">
+                                    <a href="/" title="pinterest link">
                                         <span className="fa fa-pinterest-square fs35 text-danger-light"></span>
                                     </a>
                                 </li>
                                 <li className="hidden">
-                                    <a href="#" title="linkedin link">
+                                    <a href="/" title="linkedin link">
                                         <span className="fa fa-linkedin-square fs35 text-info"></span>
                                     </a>
                                 </li>
                                 <li className="hidden">
-                                    <a href="#" title="github link">
+                                    <a href="/" title="github link">
                                         <span className="fa fa-github-square fs35 text-dark"></span>
                                     </a>
                                 </li>
                                 <li className="">
-                                    <a href="#" title="phone link">
+                                    <a href="/" title="phone link">
                                         <span className="fa fa-phone-square fs35 text-system"></span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" title="email link">
+                                    <a href="/" title="email link">
                                         <span className="fa fa-envelope-square fs35 text-muted"></span>
                                     </a>
                                 </li>
                                 <li className="hidden">
-                                    <a href="#" title="external link">
+                                    <a href="/" title="external link">
                                         <span className="fa fa-external-link-square fs35 text-muted"></span>
                                     </a>
                                 </li>
