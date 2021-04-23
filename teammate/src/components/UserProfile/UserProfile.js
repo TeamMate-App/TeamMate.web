@@ -6,10 +6,6 @@ import Logo from '../../assets/Movistar-Logo.png'
 
 const UserProfile = () => {
     
-
-
-
-
     return (
         <div className="UserProfile"> 
             <Link to="/" className="">
