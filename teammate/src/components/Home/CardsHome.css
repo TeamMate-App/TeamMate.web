@@ -1,0 +1,11 @@
+.card{
+    max-width: 25%;
+    margin-top: 50px;
+    background-color: rgba(245, 245, 245, 0.4) !important;
+    border-radius: 10px;
+
+}
+
+.card-body{
+    margin: 20px;
+}

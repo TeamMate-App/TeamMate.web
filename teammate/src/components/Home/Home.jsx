@@ -1,45 +1,46 @@
 import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import Image from "../../assets/paddle-blade-2523537_1920.jpg";
+import Image from "../../assets/hermes-rivera-newhL3aprGk-unsplash.jpg";
+import CardsHome from "./CardsHome";
 
 const Home = () => {
   return (
     <div className="home">
-      <p>HOME</p>
-      <Link to="/userProfile" className="">
-        <span className="">User Profile </span>
-      </Link>
       <main>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
+        <div className="">
+          <div className="">
             <img
-              className="bd-placeholder-img"
+              className="backgroundImg"
               src={Image}
-              width="100%"
-              height="100%"
               aria-hidden="true"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-              alt="ksjd"
+              alt="Background Image"
             />
-            <div className="container">
-              <div className="carousel-caption text-start">
-                <h1>TeamMate</h1>
-                <p>
-                  <strong>
-                    Encuentra o crea el deporte que quieres practicar
-                  </strong>
-                </p>
-                <p>
-                  <a className="btn btn-lg btn btn-light mr-1" href="/login">
-                    Login
-                  </a>
-                  <a className="btn btn-lg btn btn-light ml-1" href="/register">
-                    SignUp
-                  </a>
-                </p>
+            <div className="container-fluid text-white  over-img ">
+              <nav className="mt-2">
+                <button className="btn btn-lg btn btn-danger ">Log out </button>
+              </nav>
+              <div className="container ">
+                <CardsHome />
               </div>
+              <div>
+              
+              
+              </div>
+              <h1 className="title">TeamMate</h1>
+              <p>
+                <strong>
+                  Encuentra o crea el deporte que quieres practicar
+                </strong>
+              </p>
+              <p>
+                <a className="btn btn-lg btn btn-light mr-1 " href="/login">
+                  Login
+                </a>
+                <a className="btn btn-lg btn btn-light ml-1" href="/register">
+                  SignUp
+                </a>
+              </p>
             </div>
           </div>
         </div>
