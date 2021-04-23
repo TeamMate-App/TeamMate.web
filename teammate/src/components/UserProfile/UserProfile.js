@@ -2,6 +2,7 @@ import React from 'react'
 import './UserProfile.css'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/Movistar-Logo.png'
+import { removeUser } from '../../stores/AccessTokenStore'
 
 
 const UserProfile = () => {
@@ -147,7 +148,7 @@ const UserProfile = () => {
                 </div>
 
                 <div>
-                    <button className="w-80 btn btn-lg btn-outline-danger" type="submit">Delete</button>
+                    <button className="w-80 btn btn-lg btn-outline-danger" onClick={removeUser}>Delete</button>
                 </div>
             </div >
         </div>
