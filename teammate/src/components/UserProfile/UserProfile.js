@@ -5,6 +5,10 @@ import Logo from '../../assets/Movistar-Logo.png'
 
 
 const UserProfile = () => {
+    
+
+
+
 
     return (
         <div className="UserProfile"> 
@@ -144,6 +148,10 @@ const UserProfile = () => {
                             </li>
                         </div>
                     </div>
+                </div>
+
+                <div>
+                    <button className="w-80 btn btn-lg btn-outline-danger" type="submit">Delete</button>
                 </div>
             </div >
         </div>

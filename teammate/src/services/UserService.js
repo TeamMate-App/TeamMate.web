@@ -8,4 +8,4 @@ export const getUserInfo = () => {
 
 
 export const register = (user) =>
-  http.post("/user/create", user).then((response) => response.data);
+  http.post("/user/register", user).then((response) => response.data);

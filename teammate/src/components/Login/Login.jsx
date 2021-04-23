@@ -34,7 +34,6 @@ const validators = {
 };
 
 const Login = ({ doLogin }) => {
- 
   const { push } = useHistory();
   const [state, setState] = useState({
     fields: {
@@ -62,7 +61,7 @@ const Login = ({ doLogin }) => {
       login(fields).then((response) => {
         console.log(doLogin());
         setAccessToken(response.access_token)
-        doLogin().then(() => push("/"));
+        doLogin().then(() => push("/userprofile"));
       });
     }
   };

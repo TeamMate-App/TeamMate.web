@@ -4,6 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import Logo from "../../assets/Movistar-Logo.png";
 import { register } from "../../services/UserService.js";
 import { setAccessToken } from "../../stores/AccessTokenStore";
+import { render } from "@testing-library/react";
 
 // eslint-disable-next-line no-useless-escape
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -60,9 +61,8 @@ const Login = ({ createUser }) => {
 
     if (isValid()) {
       register(fields).then((response) => {
-        console.log(createUser());
-        setAccessToken(response.access_token);
-        createUser().then(() => push("/"));
+        setAccessToken(response)
+
       });
     }
   };
@@ -104,7 +104,7 @@ const Login = ({ createUser }) => {
   const { errors } = state;
 
   return (
-    <div className="login">
+    <div className="Register">
       <Link to="/" className="">
         <span className="">Home </span>
       </Link>
@@ -116,9 +116,8 @@ const Login = ({ createUser }) => {
           <div className="form-floating">
             <label htmlFor="floatingInput">Email address</label>
             <input
-              className={`form-control ${
-                touched.email && errors.email ? "is-invalid" : ""
-              }`}
+              className={`form-control ${touched.email && errors.email ? "is-invalid" : ""
+                }`}
               type="email"
               id="email"
               name="email"
@@ -135,9 +134,8 @@ const Login = ({ createUser }) => {
           <div className="form-floating">
             <label htmlFor="password">Password</label>
             <input
-              className={`form-control ${
-                touched.password && errors.password ? "is-invalid" : ""
-              }`}
+              className={`form-control ${touched.password && errors.password ? "is-invalid" : ""
+                }`}
               type="password"
               id="password"
               placeholder="password"
@@ -154,7 +152,7 @@ const Login = ({ createUser }) => {
 
           <div className="checkbox mb-3 mt-4">
             <label className="">
-              <input type="checkbox" value="remember-me" /> Rememsssssssssber me{" "}
+              <input type="checkbox" value="remember-me" /> Remember me{" "}
             </label>
           </div>
           <button
