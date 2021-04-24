@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
  
-import AppRouter from './components/AppRouter/AppRouter'
+import AppRouter from './components/AppRouter/AppRouter.jsx'
 
 
 
