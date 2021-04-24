@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import Image from "../../assets/hermes-rivera-newhL3aprGk-unsplash.jpg";
 import CardsHome from "./CardsHome";
+import SearchHome from "../SearchHome/SearchHome"
 
 const Home = () => {
   return (
@@ -42,6 +43,7 @@ const Home = () => {
                     Encuentra o crea el deporte que quieres practicar
                   </strong>
                 </p>
+                <SearchHome />
                 <p>
                   <a className="btn btn-lg btn btn-light mr-1 " href="/login">
                     Login
