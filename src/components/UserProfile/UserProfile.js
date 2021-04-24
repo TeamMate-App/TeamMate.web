@@ -3,6 +3,7 @@ import './UserProfile.css'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/Movistar-Logo.png'
 import { removeUser } from '../../stores/AccessTokenStore'
+import ListUsers from '../User/ListUsers'
 
 
 const UserProfile = () => {
@@ -127,6 +128,7 @@ const UserProfile = () => {
                         <div className="nav nav-tabs">
                             <li className="active">
                                 <a href="#tab1" data-toggle="tab">Information</a>
+                                <ListUsers />
                             </li>
                             <li>
                                 <a href="#tab1" data-toggle="tab">Historical</a>
