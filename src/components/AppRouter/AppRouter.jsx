@@ -6,19 +6,21 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import { getUserInfo } from "../../services/UserService";
 import { register } from "../../services/UserService";
-
+import Navbar from "../Home/Navbar";
 import { getAccessToken } from "../../stores/AccessTokenStore";
+import ListEvents from "../ListEvents/ListEvents";
 
 const AppRouter = () => {
   const [user, setUser] = useState(null);
 
-  const getUser = () => {
-    return getUserInfo().then((response) => setUser(response));
+  const getUser = async () => {
+    const response = await getUserInfo();
+    return setUser(response);
   };
-  
+
   const createUser = () => {
-    return register()
-  }
+    return register();
+  };
 
   useEffect(() => {
     if (getAccessToken()) {
@@ -28,17 +30,21 @@ const AppRouter = () => {
 
   return (
     <>
+      <Navbar user={user} />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/register" render={() => <Register doRegister={createUser} />} />
+        <Route
+          exact
+          path="/register"
+          render={() => <Register doRegister={createUser} />}
+        />
         <Route exact path="/login" render={() => <Login doLogin={getUser} />} />
         <Route exact path="/userProfile" component={UserProfile} />
+        <Route exact path="/listEvents" component={ListEvents} />
       </Switch>
     </>
   );
 };
 
-//OJO: para hacer la logica de la navbar que cambia login por close session.... clase de sabado 10 min 4:31:00
-//{user ? ()} ----------> si tengo usuario pinta esto y si no esto otro con el ternario ? :
 
 export default AppRouter;
