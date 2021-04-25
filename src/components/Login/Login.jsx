@@ -59,7 +59,6 @@ const Login = ({ doLogin }) => {
 
     if (isValid()) {
       login(fields).then((response) => {
-        // console.log(doLogin());
         setAccessToken(response.access_token)
         doLogin().then(() => push("/userprofile"));
       });
