@@ -2,7 +2,8 @@ import React from 'react'
 import './UserProfile.css'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/Movistar-Logo.png'
-import { removeUser } from '../../stores/AccessTokenStore'
+import DeleteUser from '../DeleteUser/DeleteUser'
+import ListUsers from '../User/ListUsers'
 
 
 const UserProfile = () => {
@@ -124,9 +125,11 @@ const UserProfile = () => {
                 </div>
                 <div className="col-md-8">
                     <div className="tab-block">
+                    <ListUsers />
                         <div className="nav nav-tabs">
                             <li className="active">
                                 <a href="#tab1" data-toggle="tab">Information</a>
+                                
                             </li>
                             <li>
                                 <a href="#tab1" data-toggle="tab">Historical</a>
@@ -146,9 +149,9 @@ const UserProfile = () => {
                         </div>
                     </div>
                 </div>
-
+                    <DeleteUser />
                 <div>
-                    <button className="w-80 btn btn-lg btn-outline-danger" onClick={removeUser}>Delete</button>
+                    
                 </div>
             </div >
         </div>

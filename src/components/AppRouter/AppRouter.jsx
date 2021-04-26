@@ -7,6 +7,7 @@ import { register } from "../../services/UserService";
 import Navbar from "../Home/Navbar";
 import ListEvents from "../ListEvents/ListEvents";
 import Event from "../Match Detail/Match";
+import EditProfile from "../EditProfile/EditProfile";
 
 const AppRouter = () => {
   const createUser = () => {
@@ -25,6 +26,7 @@ const AppRouter = () => {
         />
         <Route exact path="/login" component={Login} />
         <Route exact path="/userProfile" component={UserProfile} />
+        <Route path="/userProfile/:id/edit" component={EditProfile} />
         <Route exact path="/listEvents" component={ListEvents} />
         <Route exact path="/events/:id" component={Event} />
       </Switch>
