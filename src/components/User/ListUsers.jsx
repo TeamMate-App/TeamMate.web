@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllUsers } from "../../services/UserService";
+import { getUserInfo } from "../../services/UserService";
 import User from "./User";
 import "./Users.css";
 
@@ -8,7 +8,7 @@ const ListUsers = () => {
   
 
   useEffect(() => {
-    getAllUsers().then((even) => {
+    getUserInfo().then((even) => {
       setUsers(even);
     });
   }, []);

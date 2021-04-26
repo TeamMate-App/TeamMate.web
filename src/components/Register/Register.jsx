@@ -4,7 +4,6 @@ import { Link, useHistory } from "react-router-dom";
 import Logo from "../../assets/Movistar-Logo.png";
 import { register } from "../../services/UserService.js";
 import { setAccessToken } from "../../stores/AccessTokenStore";
-import { render } from "@testing-library/react";
 
 // eslint-disable-next-line no-useless-escape
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -62,7 +61,7 @@ const Login = ({ createUser }) => {
     if (isValid()) {
       register(fields).then((response) => {
         setAccessToken(response)
-
+        push("/");
       });
     }
   };
