@@ -56,11 +56,10 @@ export default function EditProfile() {
         error={errors.name}
       />
       <FormEditProfile
-        name="Description"
-        id="description"
-        value={user.description}
+        name="Address"
+        id="Address"
+        value={user.address}
         onChange={onChange}
-        tag="textarea"
         error={errors.description}
       />
       <FormEditProfile

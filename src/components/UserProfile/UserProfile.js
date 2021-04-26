@@ -2,7 +2,7 @@ import React from 'react'
 import './UserProfile.css'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/Movistar-Logo.png'
-import { removeUser } from '../../stores/AccessTokenStore'
+import {removeUser} from '../../services/UserService'
 import ListUsers from '../User/ListUsers'
 
 

@@ -16,3 +16,7 @@ export const register = (user) =>
 export const editUser = (user) => {
   return http.put("/user/edit/", user)
 }
+
+export const removeUser = (user) => {
+  return http.post("/delete", user)
+}
