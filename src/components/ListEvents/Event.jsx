@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import "./Events.css";
 
 export default function Event({
@@ -19,7 +19,9 @@ export default function Event({
           <div className="photo" style={{ backgroundImage: `url(${image})` }} />
           <ul className="details">
             <li className="author">
-              <a href="/">{name}</a>
+              <Link to={`/events/${id}`}>
+                <h1>{name}</h1>
+              </Link>
             </li>
             <li className="date">{date}</li>
             <li className="tags">
@@ -36,14 +38,14 @@ export default function Event({
                 <li>
                   <a href="/">CSS</a>
                 </li>
-              </ul>
+              </ul> 
             </li>
           </ul>
         </div>
         <div className="description">
-          <h1>
-            <a href="/">{name}</a>
-          </h1>
+          <Link to={`/events/${id}`}>
+            <h1>{name}</h1>
+          </Link>
           <h2>{address}</h2>
           <p>{description}</p>
           <p className="read-more">
