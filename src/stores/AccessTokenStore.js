@@ -12,10 +12,4 @@ export const logout = () => {
   window.location.assign("/login");
 };
 
-export const removeUser = (user) => {
-  console.log( "hola",removeUser)
-  window.localStorage.removeItem(user);
-  console.log()
-// window.location.assign("/");
- };
 

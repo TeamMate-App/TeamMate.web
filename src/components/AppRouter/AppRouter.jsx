@@ -9,6 +9,7 @@ import { register } from "../../services/UserService";
 import Navbar from "../Home/Navbar";
 import { getAccessToken } from "../../stores/AccessTokenStore";
 import ListEvents from "../ListEvents/ListEvents";
+import EditProfile from "../EditProfile/EditProfile";
 
 const AppRouter = () => {
   const [user, setUser] = useState(null);
@@ -40,6 +41,7 @@ const AppRouter = () => {
         />
         <Route exact path="/login" render={() => <Login doLogin={getUser} />} />
         <Route exact path="/userProfile" component={UserProfile} />
+        <Route path="/userProfile/:id/edit" component={EditProfile} />
         <Route exact path="/listEvents" component={ListEvents} />
       </Switch>
     </>
