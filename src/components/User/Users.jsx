@@ -1,11 +1,6 @@
 import User from "./User";
 
-
 const Users = ({ users }) => {
-  console.log(users);
-
-  console.log(users.length > 0);
-
   return (
     <>
       {users.length > 0 ? (

@@ -1,26 +1,18 @@
-import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router";
-import { editUser, getUserInfo } from "../../services/UserService";
-import FormEditProfile from "./FormEditProfile";
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { putEditMatch } from "../../services/EventService";
+import FormEditMatch from "./FormEditMatch";
 
-export default function EditProfile() {
-  const { id } = useParams();
+export default function EditMatch(props) {
+  const [match, setMatch] = useState(props.location.state);
   const { push } = useHistory();
-  const [user, setUser] = useState();
-  const [address, setAddress] = useState();
-  const [image, setImage] = useState();
   const [errors, setErrors] = useState({});
 
-  useEffect(() => {
-    getUserInfo(id).then((user) => setUser(user));
-  }, [id]);
-
-  if (!user) {
+  if (!match) {
     return "Loading...";
   }
-
   const onChange = (event) => {
-    setUser((old) => {
+    setMatch((old) => {
       let value = event.target.value;
       if (event.target.type === "file") {
         value = event.target.files[0];
@@ -33,13 +25,10 @@ export default function EditProfile() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    // const formData = new FormData();
-    // Object.entries(user, ).forEach(([key, value]) => {
-    // formData.append(key, value);
-    //  });=====PREGUNTAR POR QUE NO ME FUNCIONA DE ESTA MANERA
-    editUser(user, address, image)
+
+    putEditMatch(match.id, match)
       .then(() => {
-        push("/userProfile");
+        push("/listEvents");
       })
       .catch((e) => {
         if (e.response.status === 400) {
@@ -50,21 +39,21 @@ export default function EditProfile() {
 
   return (
     <form onSubmit={onSubmit} className="container">
-      <FormEditProfile
+      <FormEditMatch
         name="name"
         id="name"
-        value={user.name}
+        value={match.name}
         onChange={onChange}
         error={errors.name}
       />
-      <FormEditProfile
+      <FormEditMatch
         name="address"
         id="address"
-        value={user.address}
+        value={match.address}
         onChange={onChange}
         error={errors.description}
       />
-      <FormEditProfile
+      <FormEditMatch
         name="image"
         id="image"
         onChange={onChange}

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../Contexts/UserContext";
 import { logout } from "../../stores/AccessTokenStore";
 import "./Navbar.css";
 

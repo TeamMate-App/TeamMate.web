@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "../Login/Login.css";
 import { Link, useHistory } from "react-router-dom";
 import Logo from "../../assets/Movistar-Logo.png";
 import { login } from "../../services/AuthService.js";
 import { setAccessToken } from "../../stores/AccessTokenStore";
-import { UserContext } from "../../Context/UserContext";
 import { useUserContext } from "../../hooks/useUserContext";
 
 // eslint-disable-next-line no-useless-escape
@@ -64,7 +63,6 @@ const Login = () => {
 
     if (isValid()) {
       login(fields).then((response) => {
-        // console.log(doLogin());
         setAccessToken(response.access_token);
         doLogin().then(() => push("/userprofile"));
       });

@@ -7,8 +7,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*  La imagen de fondo se fija en la ventana gráfica para que no se mueva cuando
-    la altura del contenido es mayor que la altura de la imagen */
     background-attachment: fixed;
     position: fixed;
     top: 0;
@@ -23,9 +21,9 @@
 .title {
     justify-content: center;
     align-items: center;
-    padding-top: 200px;
+    padding-top: 20px;
 }
 
-.myprofile{
+.myprofile {
     margin: 10px;
 }

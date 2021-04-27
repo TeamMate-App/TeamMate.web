@@ -8,6 +8,8 @@ import Navbar from "../Home/Navbar";
 import ListEvents from "../ListEvents/ListEvents";
 import Event from "../Match Detail/Match";
 import EditProfile from "../EditProfile/EditProfile";
+import EditMatch from "../Edit Match/EditMatch";
+import CreateMatch from "../CreateGame/CreateMatch";
 
 const AppRouter = () => {
   const createUser = () => {
@@ -29,6 +31,12 @@ const AppRouter = () => {
         <Route path="/userProfile/:id/edit" component={EditProfile} />
         <Route exact path="/listEvents" component={ListEvents} />
         <Route exact path="/events/:id" component={Event} />
+        <Route
+          exact
+          path="/events/:id/edit"
+          render={(props) => <EditMatch {...props} />}
+        />
+        <Route exact path="/createMatch" component={CreateMatch} />
       </Switch>
     </>
   );

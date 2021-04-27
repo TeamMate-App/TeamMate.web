@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useUser } from "../../Hooks/useUser";
+import { useUserContext } from "../../hooks/useUserContext";
 
 export default function LinkToEdit({ User, id }) {
-  const user  = useUser();
+  const user = useUserContext();
   return (
     <div className="LinkToEdit">
       {user?.id === User && (
