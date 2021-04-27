@@ -5,16 +5,12 @@ import "./Events.css";
 
 const ListEvents = () => {
   const [events, setEvents] = useState([]);
-  
 
   useEffect(() => {
     getEvents().then((even) => {
       setEvents(even);
-      console.log("even");
     });
   }, []);
-
-console.log(events)
 
   return (
     <div>

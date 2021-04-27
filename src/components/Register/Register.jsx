@@ -17,7 +17,6 @@ const validators = {
     } else if (!EMAIL_PATTERN.test(value)) {
       message = "Email is invalid";
     }
-
     return message;
   },
   password: (value) => {
@@ -28,7 +27,6 @@ const validators = {
     } else if (value.length < 8) {
       message = "Password must have 8 characters or more";
     }
-
     return message;
   },
 };
@@ -54,13 +52,12 @@ const Login = ({ createUser }) => {
   };
 
   const onSubmit = (e) => {
-    console.log("submit")
     const { fields } = state;
     e.preventDefault();
 
     if (isValid()) {
       register(fields).then((response) => {
-        setAccessToken(response)
+        setAccessToken(response);
         push("/");
       });
     }
@@ -115,8 +112,9 @@ const Login = ({ createUser }) => {
           <div className="form-floating">
             <label htmlFor="floatingInput">Email address</label>
             <input
-              className={`form-control ${touched.email && errors.email ? "is-invalid" : ""
-                }`}
+              className={`form-control ${
+                touched.email && errors.email ? "is-invalid" : ""
+              }`}
               type="email"
               id="email"
               name="email"
@@ -133,8 +131,9 @@ const Login = ({ createUser }) => {
           <div className="form-floating">
             <label htmlFor="password">Password</label>
             <input
-              className={`form-control ${touched.password && errors.password ? "is-invalid" : ""
-                }`}
+              className={`form-control ${
+                touched.password && errors.password ? "is-invalid" : ""
+              }`}
               type="password"
               id="password"
               placeholder="password"

@@ -1,14 +1,17 @@
-import { createContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { createContext } from "react";
 import { getUserInfo } from "../services/UserService";
 import { getAccessToken } from "../stores/AccessTokenStore";
+
 
 export const UserContext = createContext();
 
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  const getUser = () => {
-    return getUserInfo().then((response) => setUser(response));
+  const getUser = async () => {
+    const response = await getUserInfo();
+    return setUser(response);
   };
 
   useEffect(() => {
@@ -22,5 +25,5 @@ export function UserContextProvider({ children }) {
     user,
   };
 
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  return <UserContext.Provider value={value}> {children}</UserContext.Provider>;
 }

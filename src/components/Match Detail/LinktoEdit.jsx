@@ -1,16 +1,22 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../Context/UserContext";
+import { UserContext } from "../../Contexts/UserContext";
 
-const LinktoEdit = ({ matchsUser, matchsId }) => {
+const LinktoEdit = ({ match }) => {
   const { user } = useContext(UserContext);
 
   return (
     <div>
-      {user?.id === matchsUser && (
-        <Link to={`/events/${matchsId}/edit`}>
+      {user?.id === match?.user && (
+        <Link
+          to={{
+            pathname: `/events/${match.id}/edit`,
+            state: match,
+          }}
+        >
           <p>EDIT</p>
         </Link>
+        
       )}
     </div>
   );

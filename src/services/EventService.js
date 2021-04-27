@@ -9,3 +9,15 @@ export const getEvents = () => {
 export const getMatch = (id) => {
   return http.get(`/events/${id}`);
 };
+
+export const putEditMatch = (id, body) => {
+  return http.put(`/events/edit/${id}`, body);
+};
+
+export const getCreateMatch = () => {
+  return http.get(`/events/create`);
+};
+
+export const deleteMatch = (id) => {
+  return http.post(`/events/delete/${id}`);
+};

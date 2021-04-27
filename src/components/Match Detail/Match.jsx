@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getMatch } from "../../services/EventService";
+import { deleteMatch } from "../../services/EventService.js";
 import LinktoEdit from "./LinktoEdit";
 
 export default function Event({ user }) {
-  const [matchs, setMatch] = useState();
+  const [match, setMatch] = useState();
   const { id } = useParams();
+  const { push } = useHistory();
+  console.log("id", id);
 
   useEffect(() => {
-    getMatch(id).then((mat) => setMatch(mat));
+    getMatch(id).then((match) => setMatch(match));
   }, [id]);
 
-  if (!matchs) {
+  const remove = () => {
+    deleteMatch(id).then(() => {
+      push("/");
+    });
+  };
+  if (!match) {
     return "Loading...";
   }
 
@@ -21,33 +29,43 @@ export default function Event({ user }) {
         <div className="meta">
           <div
             className="photo"
-            style={{ backgroundImage: `url(${matchs.image})` }}
+            style={{ backgroundImage: `url(${match.image})` }}
           />
           <ul className="details">
             <li className="author">
-              <h1>{matchs.name}</h1>
+              <h1>{match.name}</h1>
             </li>
-            <li className="date">{matchs.date}</li>
+            <li className="date">{match.date}</li>
             <li className="tags">
               <li>
-                <a href="/">{matchs.id}</a>
+                <a href="/">{match.id}</a>
               </li>
               <li>
-                <LinktoEdit
-                  user={user}
-                  matchsId={matchs.id}
-                  matchsUser={matchs.user}
-                />
+                <LinktoEdit user={user} match={match} />
               </li>
             </li>
           </ul>
         </div>
         <div className="description">
-          <h1>{matchs.name}</h1>
-          <h2>{matchs.address}</h2>
-          <p>{matchs.description}</p>
+          <button
+            type="button"
+            className="close"
+            aria-label="Close"
+            id="hide-sign-close-icon"
+          >
+            <span className="close-icon">
+              <i className="fa fa-times"></i>
+            </span>
+          </button>
+          <h1>{match.name}</h1>
+          <h2>{match.address}</h2>
+          <p>{match.description}</p>
           <p className="read-more">
-            <a href="/">Created by {matchs.name}</a>
+            {user?.id === match?.user && (
+              <button className="btn btn-danger" onClick={remove}>
+                Deleteeee
+              </button>
+            )}
           </p>
         </div>
       </div>

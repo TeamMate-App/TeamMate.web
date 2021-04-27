@@ -3,9 +3,6 @@ import Event from "./Event";
 import "./Events.css";
 
 const Events = ({ events }) => {
-  console.log(events);
-  console.log(events.length > 0);
-
   return (
     <>
       {events.length > 0 ? (

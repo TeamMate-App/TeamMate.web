@@ -10,8 +10,6 @@ export default function Event({
   image,
   user,
 }) {
-  console.log("llego");
-  console.log({ image });
   return (
     <>
       <div className="blog-card">
@@ -38,7 +36,7 @@ export default function Event({
                 <li>
                   <a href="/">CSS</a>
                 </li>
-              </ul> 
+              </ul>
             </li>
           </ul>
         </div>
