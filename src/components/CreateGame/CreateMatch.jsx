@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { Component } from "react";
-import { UserContext } from "../../Contexts/UserContext";
 
 class CreateMatch extends Component {
   state = {
