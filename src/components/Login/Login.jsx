@@ -5,6 +5,7 @@ import Logo from "../../assets/Movistar-Logo.png";
 import { login } from "../../services/AuthService.js";
 import { setAccessToken } from "../../stores/AccessTokenStore";
 import { useUserContext } from "../../hooks/useUserContext";
+import GoogleAuth from "../GoogleLogin/GoogleLogin"
 
 // eslint-disable-next-line no-useless-escape
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -48,6 +49,9 @@ const Login = () => {
       email: validators.email(),
       password: validators.password(),
     },
+    social: {
+      google: "",
+    }
   });
 
   const [touched, setTouched] = useState({});
@@ -56,6 +60,7 @@ const Login = () => {
     const { errors } = state;
     return !Object.keys(errors).some((error) => errors[error]);
   };
+
 
   const onSubmit = (e) => {
     const { fields } = state;
@@ -102,6 +107,7 @@ const Login = () => {
     }));
   };
 
+
   const { email, password } = state.fields;
   const { errors } = state;
 
@@ -118,9 +124,8 @@ const Login = () => {
           <div className="form-floating">
             <label htmlFor="floatingInput">Email address</label>
             <input
-              className={`form-control ${
-                touched.email && errors.email ? "is-invalid" : ""
-              }`}
+              className={`form-control ${touched.email && errors.email ? "is-invalid" : ""
+                }`}
               type="email"
               id="email"
               name="email"
@@ -137,9 +142,8 @@ const Login = () => {
           <div className="form-floating">
             <label htmlFor="password">Password</label>
             <input
-              className={`form-control ${
-                touched.password && errors.password ? "is-invalid" : ""
-              }`}
+              className={`form-control ${touched.password && errors.password ? "is-invalid" : ""
+                }`}
               type="password"
               id="password"
               placeholder="password"
@@ -166,6 +170,8 @@ const Login = () => {
           >
             Login
           </button>
+          <br /> <br />
+          <GoogleAuth />
           <p className="mt-5 mb-3 text-muted">© 2021</p>
         </form>
       </main>
