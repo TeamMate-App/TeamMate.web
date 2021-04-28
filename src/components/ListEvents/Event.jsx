@@ -10,6 +10,7 @@ export default function Event({
   image,
   user,
 }) {
+  console.log("USER EN EL EVENT",user)
   return (
     <>
       <div className="blog-card">
@@ -17,8 +18,8 @@ export default function Event({
           <div className="photo" style={{ backgroundImage: `url(${image})` }} />
           <ul className="details">
             <li className="author">
-              <Link to={`/events/${id}`}>
-                <h1>{name}</h1>
+              <Link to={`/events/${id}/${user}`}>
+                <h1 className="headerTitle">{name}</h1>
               </Link>
             </li>
             <li className="date">{date}</li>
@@ -41,7 +42,7 @@ export default function Event({
           </ul>
         </div>
         <div className="description">
-          <Link to={`/events/${id}`}>
+          <Link to={`/events/${id}/${user}`}>
             <h1>{name}</h1>
           </Link>
           <h2>{address}</h2>

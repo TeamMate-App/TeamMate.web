@@ -20,3 +20,4 @@ export const editUser = (user) => {
 export const removeUser = (user) => {
   return http.post("/user/delete", user)
 }
+

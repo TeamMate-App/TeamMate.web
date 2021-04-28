@@ -21,3 +21,7 @@ export const getCreateMatch = () => {
 export const deleteMatch = (id) => {
   return http.post(`/events/delete/${id}`);
 };
+
+export const join = (eventId) => {
+  return http.post(`/events/join/${eventId}`);
+};

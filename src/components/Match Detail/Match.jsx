@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { getMatch } from "../../services/EventService";
 import { deleteMatch } from "../../services/EventService.js";
+import JoinEvent from "../JoinEvent/JoinEvent";
 import LinktoEdit from "./LinktoEdit";
 
-export default function Event({ user }) {
+export default function Event() {
   const [match, setMatch] = useState();
-  const { id } = useParams();
+  const { id, user } = useParams();
   const { push } = useHistory();
   console.log("id", id);
 
@@ -32,17 +33,14 @@ export default function Event({ user }) {
             style={{ backgroundImage: `url(${match.image})` }}
           />
           <ul className="details">
-            <li className="author">
-              <h1>{match.name}</h1>
+            <li className="au thor">
+              {/* <LinktoEdit user={user} match={match} /> */}
             </li>
             <li className="date">{match.date}</li>
             <li className="tags">
-              <li>
-                <a href="/">{match.id}</a>
-              </li>
-              <li>
-                <LinktoEdit user={user} match={match} />
-              </li>
+              <a href="/">{match.id}</a>
+
+              {/*  <LinktoEdit user={user} match={match} /> */}
             </li>
           </ul>
         </div>
@@ -60,13 +58,15 @@ export default function Event({ user }) {
           <h1>{match.name}</h1>
           <h2>{match.address}</h2>
           <p>{match.description}</p>
-          <p className="read-more">
-            {user?.id === match?.user && (
+          <div className="read-more">
+            {user?.id === match?.user ? (
               <button className="btn btn-danger" onClick={remove}>
                 Deleteeee
               </button>
+            ) : (
+              <JoinEvent matchId={match?.id} />
             )}
-          </p>
+          </div>
         </div>
       </div>
     </>

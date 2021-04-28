@@ -12,7 +12,6 @@ import EditMatch from "../Edit Match/EditMatch";
 import CreateMatch from "../CreateGame/CreateMatch";
 import ActivateAccount from "../TokenAccount/ActivateAccount";
 
-
 const AppRouter = () => {
   const createUser = () => {
     return register();
@@ -28,12 +27,13 @@ const AppRouter = () => {
           path="/register"
           render={() => <Register doRegister={createUser} />}
         />
-         <Route exact path="/activate/:token" component={ActivateAccount}/>
+        <Route exact path="/activate/:token" component={ActivateAccount} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/userProfile" component={UserProfile} />
         <Route path="/userProfile/:id/edit" component={EditProfile} />
         <Route exact path="/listEvents" component={ListEvents} />
-        <Route exact path="/events/:id" component={Event} />
+        <Route exact path="/events/:id/:user" component={Event} />
+
         <Route
           exact
           path="/events/:id/edit"
