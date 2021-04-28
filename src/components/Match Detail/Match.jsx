@@ -5,6 +5,7 @@ import { deleteMatch } from "../../services/EventService.js";
 import LinktoEdit from "./LinktoEdit";
 
 export default function Event({ user }) {
+  console.log("Aqui estoy")
   const [match, setMatch] = useState();
   const { id } = useParams();
   const { push } = useHistory();

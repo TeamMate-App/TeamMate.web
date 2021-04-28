@@ -8,3 +8,7 @@ export const login = (body) => {
   return http.post("/login", body);
 };
 
+export const loginGoogle = (body)=> {
+  return http.get("/authenticate/google/cb", body)
+  ;
+}
