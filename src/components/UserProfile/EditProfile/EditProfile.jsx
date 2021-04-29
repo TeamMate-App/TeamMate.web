@@ -33,7 +33,11 @@ export default function EditProfile() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    editUser(user, address, image)
+    const formData = new FormData();
+    Object.entries(user).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+    editUser(formData)
       .then(() => {
         push("/userProfile");
       })
