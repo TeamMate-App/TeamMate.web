@@ -1,6 +1,6 @@
 import React from 'react'
-import DatePick from '../DatePicker/DatePicker'
-import HourPick from '../HourPicker/HourPicker'
+import DatePick from './DatePicker/DatePicker'
+import HourPick from './HourPicker/HourPicker'
 
 
 const SearchHome = () => {

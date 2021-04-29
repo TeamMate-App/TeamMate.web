@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { getEvents } from "../../services/EventService";
-import Events from "./Events";
+import { getGames } from "../../services/GameService";
+import GamesMap from "./GamesMap";
 import "./Events.css";
 
-const ListEvents = () => {
+const ListGames = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    getEvents().then((even) => {
+    getGames().then((even) => {
       setEvents(even);
     });
   }, []);
@@ -15,9 +15,9 @@ const ListEvents = () => {
   return (
     <div>
       <h1>Lista de Eventos</h1>
-      <Events events={events} />
+      <GamesMap events={events} />
     </div>
   );
 };
 
-export default ListEvents;
+export default ListGames;

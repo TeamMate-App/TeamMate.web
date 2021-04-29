@@ -2,15 +2,15 @@ import { Route, Switch } from "react-router-dom";
 import Home from "../Home/Home";
 import UserProfile from "../UserProfile/UserProfile";
 import Login from "../Login/Login";
-import Register from "../Register/Register";
+import Register from "../Login/Register/Register";
 import { register } from "../../services/UserService";
-import Navbar from "../Home/Navbar";
-import ListEvents from "../ListEvents/ListEvents";
-import Event from "../Match Detail/Match";
-import EditProfile from "../EditProfile/EditProfile";
-import EditMatch from "../Edit Match/EditMatch";
+import EditProfile from "../UserProfile/EditProfile/EditProfile";
 import CreateMatch from "../CreateGame/CreateMatch";
-import ActivateAccount from "../TokenAccount/ActivateAccount";
+import Navbar from "../Navbar/Navbar";
+import ActivateAccount from "../Login/TokenAccount/ActivateAccount";
+import LinkEditGame from "../Edit Match/EditGame";
+import ListGames from "./../ListGames/ListGames";
+import GameDetail from "../GameDetail/GameDetail";
 
 const AppRouter = () => {
   const createUser = () => {
@@ -31,13 +31,12 @@ const AppRouter = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/userProfile" component={UserProfile} />
         <Route path="/userProfile/:id/edit" component={EditProfile} />
-        <Route exact path="/listEvents" component={ListEvents} />
-        <Route exact path="/events/:id/:user" component={Event} />
-
+        <Route exact path="/listGames" component={ListGames} />
+        <Route exact path="/games/:id" component={GameDetail} />
         <Route
           exact
-          path="/events/:id/edit"
-          render={(props) => <EditMatch {...props} />}
+          path="/games/edit/:id"
+          render={(props) => <LinkEditGame {...props} />}
         />
         <Route exact path="/createMatch" component={CreateMatch} />
       </Switch>

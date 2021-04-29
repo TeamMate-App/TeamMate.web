@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Events.css";
 
-export default function Event({
+export default function SingleGame({
   name,
   description,
   address,
@@ -10,18 +10,12 @@ export default function Event({
   image,
   user,
 }) {
-  console.log("USER EN EL EVENT",user)
   return (
     <>
       <div className="blog-card">
         <div className="meta">
           <div className="photo" style={{ backgroundImage: `url(${image})` }} />
           <ul className="details">
-            <li className="author">
-              <Link to={`/events/${id}/${user}`}>
-                <h1 className="headerTitle">{name}</h1>
-              </Link>
-            </li>
             <li className="date">{date}</li>
             <li className="tags">
               <ul>
@@ -42,8 +36,8 @@ export default function Event({
           </ul>
         </div>
         <div className="description">
-          <Link to={`/events/${id}/${user}`}>
-            <h1>{name}</h1>
+          <Link to={`/games/${id}`}>
+            <h1>{name}SINGLE GAME</h1>
           </Link>
           <h2>{address}</h2>
           <p>{description}</p>

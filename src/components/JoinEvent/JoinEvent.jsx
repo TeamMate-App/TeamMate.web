@@ -1,20 +1,20 @@
 import React from "react";
-import { join } from "../../services/EventService";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { join } from "../../services/GameService";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-
-
-const JoinEvent = ({matchId}) => {
- 
+const JoinEvent = ({ GameId }) => {
   const notify = (message) => toast(message);
-  console.log('matchId', matchId)
+  console.log("GameId", GameId);
+
+  
   const handleClick = () => {
-    join(matchId)
-    .then((res)=> {
-      notify(res);
-    }).catch(error => notify(error.message)); 
-  }
+    join(GameId)
+      .then((res) => {
+        notify(res);
+      })
+      .catch((error) => notify(error.message));
+  };
 
   return (
     <div>

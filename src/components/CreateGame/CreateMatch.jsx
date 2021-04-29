@@ -18,13 +18,13 @@ class CreateMatch extends Component {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/api/events/create", {
+      .post("http://localhost:3001/api/games/create", {
         name: this.state.name,
         address: this.state.address,
         description: this.state.description,
       })
       .then((response) => {
-        this.props.history.push("/listEvents");
+        this.props.history.push("/listGames");
 
       })
       .catch((error) => console.log(error));

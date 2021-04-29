@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import "../Login/Login.css";
+import "../Login.css";
 import { Link, useHistory } from "react-router-dom";
-import Logo from "../../assets/Movistar-Logo.png";
-import { register } from "../../services/UserService.js";
-import { setAccessToken } from "../../stores/AccessTokenStore";
-
+import Logo from "../../../assets/Movistar-Logo.png";
+import { register } from "../../../services/UserService.js";
+import { setAccessToken } from "../../../stores/AccessTokenStore";
 
 // eslint-disable-next-line no-useless-escape
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;

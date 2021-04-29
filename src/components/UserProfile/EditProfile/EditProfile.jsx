@@ -1,18 +1,26 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { putEditMatch } from "../../services/EventService";
-import FormEditMatch from "./FormEditMatch";
+import { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router";
+import { editUser, getUserInfo } from "../../../services/UserService.js";
+import FormEditProfile from "./FormEditProfile";
 
-export default function EditMatch(props) {
-  const [match, setMatch] = useState(props.location.state);
+export default function EditProfile() {
+  const { id } = useParams();
   const { push } = useHistory();
+  const [user, setUser] = useState();
+  const [address, setAddress] = useState();
+  const [image, setImage] = useState();
   const [errors, setErrors] = useState({});
 
-  if (!match) {
+  useEffect(() => {
+    getUserInfo(id).then((user) => setUser(user));
+  }, [id]);
+
+  if (!user) {
     return "Loading...";
   }
+
   const onChange = (event) => {
-    setMatch((old) => {
+    setUser((old) => {
       let value = event.target.value;
       if (event.target.type === "file") {
         value = event.target.files[0];
@@ -25,10 +33,9 @@ export default function EditMatch(props) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-
-    putEditMatch(match.id, match)
+    editUser(user, address, image)
       .then(() => {
-        push("/listEvents");
+        push("/userProfile");
       })
       .catch((e) => {
         if (e.response.status === 400) {
@@ -39,21 +46,21 @@ export default function EditMatch(props) {
 
   return (
     <form onSubmit={onSubmit} className="container">
-      <FormEditMatch
+      <FormEditProfile
         name="name"
         id="name"
-        value={match.name}
+        value={user.name}
         onChange={onChange}
         error={errors.name}
       />
-      <FormEditMatch
+      <FormEditProfile
         name="address"
         id="address"
-        value={match.address}
+        value={user.address}
         onChange={onChange}
         error={errors.description}
       />
-      <FormEditMatch
+      <FormEditProfile
         name="image"
         id="image"
         onChange={onChange}

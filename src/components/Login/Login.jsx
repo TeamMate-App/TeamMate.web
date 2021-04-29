@@ -5,7 +5,7 @@ import Logo from "../../assets/Movistar-Logo.png";
 import { login } from "../../services/AuthService.js";
 import { setAccessToken } from "../../stores/AccessTokenStore";
 import { useUserContext } from "../../hooks/useUserContext";
-import GoogleAuth from "../GoogleLogin/GoogleLogin"
+import GoogleAuth from "./GoogleLogin/GoogleLogin"
 
 // eslint-disable-next-line no-useless-escape
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;

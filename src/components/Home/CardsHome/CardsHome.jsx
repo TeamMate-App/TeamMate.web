@@ -17,7 +17,7 @@ const CardsHome = () => {
           </Link>
         </div>
         <div className="card mr-2">
-          <Link to="/ListEvents">
+          <Link to="/ListGames">
             <div className="card-body">
               <h5 className="card-title">My Events</h5>
             </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import "./Home.css";
 import Image from "../../assets/hermes-rivera-newhL3aprGk-unsplash.jpg";
-import CardsHome from "./CardsHome";
-import SearchHome from "../SearchHome/SearchHome";
+import CardsHome from "./CardsHome/CardsHome";
+import SearchHome from "./SearchBar/SearchHome";
 
 const Home = () => {
   return (
