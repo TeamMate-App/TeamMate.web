@@ -7,8 +7,6 @@ export default function EditProfile() {
   const { id } = useParams();
   const { push } = useHistory();
   const [user, setUser] = useState();
-  const [address, setAddress] = useState();
-  const [image, setImage] = useState();
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -33,11 +31,11 @@ export default function EditProfile() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    // const formData = new FormData();
-    // Object.entries(user, ).forEach(([key, value]) => {
-    // formData.append(key, value);
-    //  });=====PREGUNTAR POR QUE NO ME FUNCIONA DE ESTA MANERA
-    editUser(user, address, image)
+    const formData = new FormData();
+    Object.entries(user).forEach(([key, value]) => {
+    formData.append(key, value);
+     });
+    editUser(formData)
       .then(() => {
         push("/userProfile");
       })
