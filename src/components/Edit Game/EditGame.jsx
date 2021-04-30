@@ -25,8 +25,11 @@ export default function LinkEditGame(props) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-
-    putEditMatch(match.id, match)
+    const formData = new FormData();
+    Object.entries(match).forEach(([key, value]) => {
+    formData.append(key, value);
+     });
+    putEditMatch(match.id,formData)
       .then(() => {
         push("/listGames");
       })
