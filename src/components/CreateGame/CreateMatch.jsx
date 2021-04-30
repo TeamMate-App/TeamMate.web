@@ -7,6 +7,7 @@ class CreateMatch extends Component {
       name: "",
       address: "",
       description: "",
+      image:"",
     },
   };
 
@@ -16,12 +17,16 @@ class CreateMatch extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    Object.entries(this.state.image).forEach(([key, value]) => {
+    formData.append(key, value);
+     });
 
-    axios
-      .post("http://localhost:3001/api/games/create", {
+    axios.post("http://localhost:3001/api/games/create", {
         name: this.state.name,
         address: this.state.address,
         description: this.state.description,
+        image: this.state.formData
       })
       .then((response) => {
         this.props.history.push("/listGames");
@@ -33,7 +38,7 @@ class CreateMatch extends Component {
   render() {
     return (
       <div>
- 
+
         <article className="container">
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
@@ -48,7 +53,7 @@ class CreateMatch extends Component {
               />
             </div>
 
-      
+
 
             <div className="form-group">
               <label htmlFor="description">Description</label>
@@ -64,18 +69,30 @@ class CreateMatch extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="first_brewed">Adress</label>
+              <label htmlFor="address">Address</label>
               <input
                 required
                 type="text"
                 className="form-control"
-                id="first_brewed"
+                id="address"
                 onChange={this.handleChange}
-                name="first_brewed"
+                name="address"
               />
             </div>
 
- 
+            <div className="form-group">
+              <label htmlFor="Image">Image</label>
+              <input
+                required
+                type="file"
+                className=""
+                id="image"
+                onChange={this.handleChange}
+                name="image"
+              />
+            </div>
+
+
             <div className="text-center">
               <button type="submit" className="btn btn-primary ">
                 Create

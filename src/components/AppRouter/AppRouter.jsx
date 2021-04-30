@@ -8,7 +8,7 @@ import EditProfile from "../UserProfile/EditProfile/EditProfile";
 import CreateMatch from "../CreateGame/CreateMatch";
 import Navbar from "../Navbar/Navbar";
 import ActivateAccount from "../Login/TokenAccount/ActivateAccount";
-import LinkEditGame from "../Edit Match/EditGame";
+import LinkEditGame from "../Edit Game/EditGame";
 import ListGames from "./../ListGames/ListGames";
 import GameDetail from "../GameDetail/GameDetail";
 
