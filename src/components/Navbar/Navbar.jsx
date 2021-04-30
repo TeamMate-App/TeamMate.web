@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div style={{ height: 100 }}></div>
+      <div style={{ height: 70 }}></div>
     </div>
   );
 };
