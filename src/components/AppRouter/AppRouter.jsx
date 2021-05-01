@@ -6,7 +6,6 @@ import Register from "../Login/Register/Register";
 import { register } from "../../services/UserService";
 import EditProfile from "../UserProfile/EditProfile/EditProfile";
 import CreateMatch from "../CreateGame/CreateMatch";
-import Navbar from "../Navbar/Navbar";
 import ActivateAccount from "../Login/TokenAccount/ActivateAccount";
 import LinktoEditGame from "../GameDetail/LinkToEditGame";
 import ListGames from "./../ListGames/ListGames";
@@ -19,7 +18,7 @@ const AppRouter = () => {
 
   return (
     <>
-      <Navbar />
+     
       <Switch>
         <Route exact path="/" component={Home} />
         <Route
