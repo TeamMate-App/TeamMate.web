@@ -26,7 +26,7 @@ class CreateMatch extends Component {
         name: this.state.name,
         address: this.state.address,
         description: this.state.description,
-        image: this.state.formData
+        image: this.state.image
       })
       .then((response) => {
         this.props.history.push("/listGames");
@@ -63,7 +63,6 @@ class CreateMatch extends Component {
                 className="form-control"
                 id="description"
                 onChange={this.handleChange}
-                x
                 rows={7}
               ></textarea>
             </div>
