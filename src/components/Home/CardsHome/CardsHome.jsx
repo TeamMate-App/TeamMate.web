@@ -5,42 +5,91 @@ import "./CardsHome.css";
 const CardsHome = () => {
   return (
     <>
-      <div className="d-flex justify-content-center ">
-        <div className="card mr-2">
-          <Link
-            to="/userProfile"
-            className="myprofile text-decoration-none text-white"
-          >
-            <div className="card-body">
-              <h5 className="card-title">My Profile</h5>
+      <div className="d-flex card-deck row justify-content-center">
+        <div className="flip-card col-4 " tabIndex="0">
+          <div className="flip-card-inner">
+            <div className="flip-card-front text-decoration:none">
+              <Link to="/userProfile">
+                <div className="card-body">
+                  <img className="imgCard"
+                    src="https://kibotics.org/static/assets/img/profiles/avatar.png"
+                    style={{
+                      width: 100,
+                      height: 100,
+                      backgroundColor: "powderblue",
+                      overflow: "hidden"
+                      
+                    }}
+                    alt="Avatar"
+                  ></img>
+                </div>
+              </Link>
             </div>
-          </Link>
+            <div className="flip-card-back">
+              <Link to="/userProfile">
+                <div className="card-body">
+                  <h5 className="card-title">My profile</h5>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="card mr-2">
-          <Link to="/ListGames">
-            <div className="card-body">
-              <h5 className="card-title">My Events</h5>
+        <div className="flip-card col-4" tabIndex="0">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <Link to="/ListGames">
+                <div className="card-body">
+                <img className="imgCard"
+                    src="https://lh3.googleusercontent.com/proxy/0Kqgd2x9-0igrNeFK7EZl_dGykLgAP562po4w29K_PPeZOWCO0XS5KWsubqlfemf0wKqHvSTmNhb4cC-VxdsUqSTqqHqwU7lTO5BVo8WN9FoMV5XdFoG1-pmKzk"
+                    style={{
+                      width: 100,
+                      height: 100,
+                      backgroundColor: "powderblue",
+                      overflow: "hidden"
+                      
+                    }}
+                    alt="Avatar"
+                  ></img>
+                  
+                </div>
+              </Link>
             </div>
-          </Link>
+            <div className="flip-card-back">
+              <Link to="/ListGames">
+                <div className="card-body">
+                  <h5 className="card-title">My Events</h5>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="d-flex justify-content-center ">
-        <div className="card mr-2">
-          <Link
-            to="/createMatch"
-            className="myprofile text-decoration-none text-white"
-          >
-            <div className="card-body">
-              <h5 className="card-title">Create a Game</h5>
+        <div className="flip-card col-4" tabIndex="0">
+          <div className="flip-card-inner">
+            <div className="flip-card-front">
+              <Link to="/createMatch">
+                <div className="card-body">
+                <img className="imgCard"
+                    src="https://st2.depositphotos.com/3849181/7778/v/600/depositphotos_77780378-stock-illustration-paddle-game.jpg"
+                    style={{
+                      width: 100,
+                      height: 100,
+                      backgroundColor: "powderblue",
+                      overflow: "hidden"
+                      
+                    }}
+                    alt="Avatar"
+                  ></img>
+                </div>
+              </Link>
             </div>
-          </Link>
-        </div>
-        <div className="card mr-2">
-          <Link to="/">
-            <div className="card-body">
-              <h5 className="card-title">Create tournament</h5>
+            <div className="flip-card-back">
+              <Link to="/createMatch">
+                <div className="card-body">
+                  <h5 className="card-title">Create a Game</h5>
+                </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         </div>
       </div>
     </>

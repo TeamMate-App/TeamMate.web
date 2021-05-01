@@ -6,9 +6,8 @@ import Register from "../Login/Register/Register";
 import { register } from "../../services/UserService";
 import EditProfile from "../UserProfile/EditProfile/EditProfile";
 import CreateMatch from "../CreateGame/CreateMatch";
-import Navbar from "../Navbar/Navbar";
 import ActivateAccount from "../Login/TokenAccount/ActivateAccount";
-import LinkEditGame from "../Edit Game/EditGame";
+import LinktoEditGame from "../GameDetail/LinkToEditGame";
 import ListGames from "./../ListGames/ListGames";
 import GameDetail from "../GameDetail/GameDetail";
 
@@ -19,7 +18,7 @@ const AppRouter = () => {
 
   return (
     <>
-      <Navbar />
+     
       <Switch>
         <Route exact path="/" component={Home} />
         <Route
@@ -30,13 +29,13 @@ const AppRouter = () => {
         <Route exact path="/activate/:token" component={ActivateAccount} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/userProfile" component={UserProfile} />
-        <Route path="/userProfile/:id/edit" component={EditProfile} />
+        <Route exact path="/userProfile/:id/edit" component={EditProfile} />
         <Route exact path="/listGames" component={ListGames} />
         <Route exact path="/games/:id" component={GameDetail} />
         <Route
           exact
           path="/games/edit/:id"
-          render={(props) => <LinkEditGame {...props} />}
+          render={(props) => <LinktoEditGame {...props} />}
         />
         <Route exact path="/createMatch" component={CreateMatch} />
       </Switch>

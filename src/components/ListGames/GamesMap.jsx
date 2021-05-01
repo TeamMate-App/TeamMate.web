@@ -1,5 +1,6 @@
 import "./Events.css";
 import SingleGame from "./SingleGame";
+import "./../Navbar/Navbar.css"
 
 const GamesMap = ({ events }) => {
   return (
