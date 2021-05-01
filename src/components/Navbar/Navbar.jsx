@@ -15,7 +15,6 @@ const Navbar = () => {
     $(window).scroll(function () {
       if ($(document).scrollTop() > 2) {
         $(".nav").addClass("affix");
-        console.log("OK");
       } else {
         $(".nav").removeClass("affix");
       }
