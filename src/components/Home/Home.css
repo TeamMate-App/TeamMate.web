@@ -1,21 +1,20 @@
 .backgroundImg {
-    min-height: 600px;
+    min-height: 550px;
     min-width: 1024px;
-    height: 100px;
+    height: 80px;
     width: 100vw;
     max-width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
     top: 0;
     left: 0;
     z-index: -1;
 
 
     background-repeat: repeat-x;
-    animation: animatedBackground 10s ease-in-out infinite alternate;
+    animation: animatedBackground 50s  infinite ease-in
 
 }
 
@@ -34,36 +33,63 @@
     0% {
         /* opacity: .9; */
         background-image: url("./manuel-pappacena-zTwzxr4BbTA-unsplash.jpg");
-        background-position: 100%;
+        background-position: 50%;
+        filter: grayscale(50%);
+        
+    }
+
+    27.9999999999% {
+        /* opacity: .9; */
+        background-image: url("./manuel-pappacena-zTwzxr4BbTA-unsplash.jpg");
+        background-position: 0 0;
+        filter: grayscale(0%);
+
+        
+    }
+
+    28% {
+        background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
+        background-position: 0 0;
+        filter: grayscale(50%);
+        
+    }
+
+    55.99999999999999% {
+        background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
+        background-position: 50%;
+        filter: grayscale(0%);
+
+       
+    }
+
+    56% {
+        /* opacity: .9; */
+        background-image: url("./tomasz-krawczyk-M2x3A8Q4JbY-unsplash.jpg");
+        background-position: 50%;
+        filter: grayscale(50%);
+    }
+
+    84% {
+        /* opacity: .9; */
+        background-image: url("./tomasz-krawczyk-M2x3A8Q4JbY-unsplash.jpg");
+        background-position: 0 0;
+        filter: grayscale(0%);
+
+        
+    }
+
+    85% {
+        background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
+        background-position: 0 0;
+        filter: grayscale(50%);
+        
     }
 
     100% {
-        background-position: 0 0;
-    }
-}
+        background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
+        background-position: 50%;
+        filter: grayscale(0%);
 
-/*   #animate-area {
-    width: 200px;
-    height: 200px;
-    background-image: url(http://placekitten.com/400/200);
-    background-position: 0px 0px;
-    background-repeat: repeat-x;
-    animation: animatedBackground 10s linear infinite alternate;
-  }
- */
-
-/* animation bg image */
-@keyframes breath {
-    from {
-
-        filter: grayscale(100%);
-        transform: scale(1);
-
-    }
-
-    to {
-
-
-        transform: scale(1.15)
+       
     }
 }

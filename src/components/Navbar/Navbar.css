@@ -1,18 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
-html,
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Quicksand", sans-serif;
-    font-size: 62.5%;
-    font-size: 10px;
-  
-}
-/*-- Inspiration taken from abdo steif -->
-/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
-
-/* Navbar section */
 
 .nav {
     width: 100%;
@@ -20,6 +5,9 @@ body {
     position: fixed;
     line-height: 65px;
     text-align: center;
+    z-index: 50;
+    margin-top: -120px;
+    background-color: rgba(39, 37, 37, 0.9);
 }
 
 .nav div.logo {
@@ -31,12 +19,12 @@ body {
 
 .nav div.logo a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #fff;
     font-size: 2.5rem;
 }
 
 .nav div.logo a:hover {
-    
+    color: #00E676;
 }
 
 .nav div.main_list {
@@ -62,36 +50,15 @@ body {
 
 .nav div.main_list ul li a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: #fff;
     line-height: 65px;
     font-size: 2.4rem;
 }
 
 .nav div.main_list ul li a:hover {
-    color: #3d3d3d;
+    color: #0bcc6f;
 }
 
-
-/* Home section */
-
-.homfe {
-    width: 100%;
-    height: 100vh;
-    background-image: url(https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80);
-    background-position: center top;
-	background-size:cover;
-}
-
-.navTrigger {
-    display: none;
-}
-
-.nav {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    -webkit-transition: all 0.4s ease;
-    transition: all 0.4s ease;
-}
 
 
 /* Media qurey section */
@@ -339,7 +306,7 @@ body {
 
 .affix {
     padding: 0;
-    background-color: #111;
+    background-color: rgba(39, 37, 37, 0.5);
 }
 
 
@@ -349,7 +316,7 @@ body {
 
 .myH2 {
 	text-align:center;
-	font-size: 4rem;
+	font-size: 16px;
 }
 .myP {
 	text-align: justify;

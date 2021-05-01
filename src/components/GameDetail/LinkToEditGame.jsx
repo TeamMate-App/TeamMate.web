@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../Contexts/UserContext";
+import "../ListGames/Events.css";
+
 
 const LinktoEditGame = ({ Game }) => {
   const { user } = useContext(UserContext);
