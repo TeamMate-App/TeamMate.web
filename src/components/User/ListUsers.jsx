@@ -16,7 +16,6 @@ const ListUsers = () => {
 
   return (
     <div>
-      <h1>Lista de Eventos</h1>
       <User users={users} />
     </div>
   );

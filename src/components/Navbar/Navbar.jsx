@@ -4,8 +4,7 @@ import "./Navbar.css";
 import $ from "jquery";
 
 const Navbar = () => {
-  const { user } = useContext(UserContext);
-  console.log("LLEGA LA NAVBAR");
+  const { user } = useContext(UserContext)
   useEffect(() => {
     $(".navTrigger").on(function () {
       $(this).toggleClass("active");
@@ -16,7 +15,6 @@ const Navbar = () => {
     $(window).scroll(function () {
       if ($(document).scrollTop() > 2) {
         $(".nav").addClass("affix");
-        console.log("OK");
       } else {
         $(".nav").removeClass("affix");
       }
