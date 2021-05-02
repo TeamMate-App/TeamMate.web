@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+footer {
+    width: 100%;
+    position:absolute;
+    background-position: center center;
+
+}

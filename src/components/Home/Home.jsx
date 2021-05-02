@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import CardsHome from "./CardsHome/CardsHome";
 import SearchHome from "./SearchBar/SearchHome";
+import Footer from "./Footer/Footer"
 
 const Home = () => {
   return (
@@ -44,6 +45,7 @@ const Home = () => {
           </div>
         </main>
       </div>
+      <Footer />
     </>
   );
 };
