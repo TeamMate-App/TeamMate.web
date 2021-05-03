@@ -61,15 +61,16 @@ const Login = () => {
     return !Object.keys(errors).some((error) => errors[error]);
   };
 
-
   const onSubmit = (e) => {
     const { fields } = state;
     e.preventDefault();
     if (isValid()) {
-      login(fields).then((response) => {
+      login(fields)
+      .then((response) => {
         setAccessToken(response.access_token);
-        doLogin().then(() => push("/userprofile"));
-      });
+        doLogin()
+      })
+      return push("/")
     }
   };
 
