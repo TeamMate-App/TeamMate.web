@@ -9,8 +9,8 @@ export const UserContext = createContext();
 export function UserContextProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  const getUser = async () => {
-    const response = await getUserInfo();
+  const getUser =  () => {
+    const response =  getUserInfo();
     return setUser(response);
   };
 

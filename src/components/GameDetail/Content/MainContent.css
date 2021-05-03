@@ -1,0 +1,43 @@
+.backgroundCourt {
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    overflow: hidden;
+    background-image: url("./../images//Pista-de-padel-Manza.jpeg");
+
+}
+
+.player1 {
+    position: absolute;
+    right: 35%;
+    top: 38%;
+    height: auto;
+
+    z-index: 2;
+}
+
+.player2 {
+    position: absolute;
+    right: 30%;
+    top: 58%;
+    z-index: 2;
+}
+
+.player3 {
+    position: absolute;
+    right: 35%;
+    top: 38%;
+    z-index: 2;
+}
+
+.player4 {
+    position: absolute;
+    right: 35%;
+    top: 38%;
+    z-index: 2;
+}

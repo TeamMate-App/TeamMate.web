@@ -5,11 +5,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 const JoinEvent = ({ GameId }) => {
   const notify = (message) => toast(message);
-  console.log("GameId", GameId);
+  console.log("Join event GAMEID:", GameId);
 
   
   const handleClick = () => {
-    join(GameId)
+    join(GameId.id)
       .then((res) => {
         notify(res);
       })

@@ -40,7 +40,7 @@ const CardsHome = () => {
               <Link to="/ListGames">
                 <div className="card-body">
                 <img className="imgCard"
-                    src="https://lh3.googleusercontent.com/proxy/0Kqgd2x9-0igrNeFK7EZl_dGykLgAP562po4w29K_PPeZOWCO0XS5KWsubqlfemf0wKqHvSTmNhb4cC-VxdsUqSTqqHqwU7lTO5BVo8WN9FoMV5XdFoG1-pmKzk"
+                    src="https://res.cloudinary.com/teammatereact258/image/upload/v1619868731/Teammate/jmnscfjbw1oyipesynox.jpg"
                     style={{
                       width: 100,
                       height: 100,
@@ -48,7 +48,7 @@ const CardsHome = () => {
                       overflow: "hidden"
                       
                     }}
-                    alt="Avatar"
+                    alt="Court"
                   ></img>
                   
                 </div>
