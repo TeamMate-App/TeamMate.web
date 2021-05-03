@@ -1,7 +1,19 @@
-.card {
+.p{
     padding:5px;
 }
-p{
-    padding:5px;
 
+.col-sm-2 {
+    height: 80px;
+    align-items: center;
+    padding:0px 15px;
+    
+}
+.media-body {
+    background-color: #3c3a3a;
+    
+}
+
+.lead {
+    color: white;
+    font:bold
 }
