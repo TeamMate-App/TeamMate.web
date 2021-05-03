@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 import Home from "../Home/Home";
-import UserProfile from "../UserProfile/UserProfile";
+import UserProfile from "../UserProfile/UserProfile"
 import Login from "../Login/Login";
 import Register from "../Login/Register/Register";
 import { register } from "../../services/UserService";
@@ -10,7 +10,7 @@ import ActivateAccount from "../Login/TokenAccount/ActivateAccount";
 import LinktoEditGame from "../GameDetail/LinkToEditGame";
 import ListGames from "./../ListGames/ListGames";
 import GameDetail from "../GameDetail/GameDetail";
-import Footer from '../Home/Footer/Footer'
+
 
 const AppRouter = () => {
   const createUser = () => {
