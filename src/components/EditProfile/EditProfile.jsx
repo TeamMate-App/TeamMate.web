@@ -60,7 +60,7 @@ export default function EditProfile() {
         id="address"
         value={user.address}
         onChange={onChange}
-        error={errors.description}
+        error={errors.address}
       />
       <FormEditProfile
         name="image"

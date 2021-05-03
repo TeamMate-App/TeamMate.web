@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { getMatch } from "../../services/GameService";
 import { deleteMatch } from "../../services/GameService.js";
+import JoinEvent from "../JoinEvent/JoinEvent";
+import LinkToEditGame from "./LinkToEditGame";
+import CommentBox from "../Comments/Coments"
 import "../ListGames/Events.css";
 import "./../Navbar/Navbar.css";
 import "./GameDetail.css";
@@ -40,7 +43,7 @@ export default function GameDetail() {
           <div id="sidebar-right">
             <h2>Comentarios</h2>
             <hr></hr>
-            <p>Comentarios</p>
+            <CommentBox />
           </div>
         </div>
       </div>

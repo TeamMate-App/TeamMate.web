@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import CardsHome from "./CardsHome/CardsHome";
 import SearchHome from "./SearchBar/SearchHome";
+import Footer from "./Footer/Footer"
 
 const Home = () => {
   return (
@@ -39,87 +40,12 @@ const Home = () => {
                     </a>
                   </p>
                 </div>
-                <div>
-                  <h1 className="title">TeamMate</h1>
-                  <p>
-                    <strong>
-                      Encuentra o crea el deporte que quieres practicar
-                    </strong>
-                  </p>
-                  <p>
-                    <a className="btn btn-lg btn btn-light mr-1 " href="/login">
-                      Login
-                    </a>
-                    <a
-                      className="btn btn-lg btn btn-light ml-1"
-                      href="/register"
-                    >
-                      SignUp
-                    </a>
-                  </p>
-                </div>
-                <div>
-                  <h1 className="title">TeamMate</h1>
-                  <p>
-                    <strong>
-                      Encuentra o crea el deporte que quieres practicar
-                    </strong>
-                  </p>
-                  <p>
-                    <a className="btn btn-lg btn btn-light mr-1 " href="/login">
-                      Login
-                    </a>
-                    <a
-                      className="btn btn-lg btn btn-light ml-1"
-                      href="/register"
-                    >
-                      SignUp
-                    </a>
-                  </p>
-                </div>
-                <div>
-                  <h1 className="title">TeamMate</h1>
-                  <p>
-                    <strong>
-                      Encuentra o crea el deporte que quieres practicar
-                    </strong>
-                  </p>
-                  <p>
-                    <a className="btn btn-lg btn btn-light mr-1 " href="/login">
-                      Login
-                    </a>
-                    <a
-                      className="btn btn-lg btn btn-light ml-1"
-                      href="/register"
-                    >
-                      SignUp
-                    </a>
-                  </p>
-                </div>
-                <div>
-                  <h1 className="title">TeamMate</h1>
-                  <p>
-                    <strong>
-                      Encuentra o crea el deporte que quieres practicar
-                    </strong>
-                  </p>
-                  <p>
-                    <a className="btn btn-lg btn btn-light mr-1 " href="/login">
-                      Login
-                    </a>
-                    <a
-                      className="btn btn-lg btn btn-light ml-1"
-                      href="/register"
-                    >
-                      SignUp
-                    </a>
-                  </p>
-                </div>
               </div>
             </div>
           </div>
         </main>
       </div>
+      <Footer />
     </>
   );
 };
