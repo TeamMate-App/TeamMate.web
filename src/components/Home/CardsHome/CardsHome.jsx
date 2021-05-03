@@ -48,7 +48,7 @@ const CardsHome = () => {
                       overflow: "hidden"
                       
                     }}
-                    alt="Avatar"
+                    alt="Court"
                   ></img>
                   
                 </div>

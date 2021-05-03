@@ -65,7 +65,6 @@ const Login = () => {
   const onSubmit = (e) => {
     const { fields } = state;
     e.preventDefault();
-
     if (isValid()) {
       login(fields).then((response) => {
         setAccessToken(response.access_token);
