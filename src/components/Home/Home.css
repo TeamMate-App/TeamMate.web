@@ -1,8 +1,6 @@
 .backgroundImg {
-    min-height: 550px;
-    min-width: 1024px;
-    height: 80px;
-    width: 100vw;
+    height: 500px;
+    width: 100%;
     max-width: 100%;
     background-position: center center;
     background-repeat: no-repeat;

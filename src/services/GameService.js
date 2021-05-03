@@ -25,3 +25,7 @@ export const deleteMatch = (id) => {
 export const join = (GameId) => {
   return http.post(`/games/join/${GameId}`);
 };
+
+export const getPlayersSubs = (GameId) => {
+  return http.get(`/games/join/${GameId}/allPlayers`)
+}

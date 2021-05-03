@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { getMatch } from "../../services/GameService";
 import { deleteMatch } from "../../services/GameService.js";
-import JoinEvent from "../JoinEvent/JoinEvent";
-import LinkToEditGame from "./LinkToEditGame";
+/* import JoinEvent from "../JoinEvent/JoinEvent";
+import LinkToEditGame from "./LinkToEditGame"; */
 import CommentBox from "../Comments/Coments"
 import "../ListGames/Events.css";
 import "./../Navbar/Navbar.css";
 import "./GameDetail.css";
+import GameSidebarLeft from "./Content/GameSidebarLeft";
+import MainContent from "./Content/MainContent";
 
 export default function GameDetail() {
   const [Game, setGame] = useState();
@@ -32,59 +34,14 @@ export default function GameDetail() {
       <div className="pushnavbar">
         <div className="wrap">
           <div id="main-content">
-            <h2>Vista del campo</h2>
-            <hr></hr>
-            <p className="p-detailGame">Jugadores</p>
-            <div>
-              {user?.id === Game?.user ? (
-                <button className="btn btn-danger" onClick={remove}>
-                  Deleteeee
-                </button>
-              ) : (
-                <JoinEvent GameId={Game.id} />
-              )}
-            </div>
-            <div>
-              <LinkToEditGame user={user} Game={Game} />
-            </div>
+           
+            <MainContent user={user} Game={Game} remove={remove} />
           </div>
           <div id="sidebar-left">
-            <h2>Informacion</h2>
-            <hr></hr>
-            <div className="d-flex container">
-              <div className="row">
-                <div className="col-xs-12 col-sm-2">
-                  <div className="box">
-                    <ul>
-                      <li>Date</li>
-                      <li>Date</li>
-                      <li>Date</li>
-                      <li>Date</li>
-                      <li>Date</li>
-                    </ul>
-                  </div>
-                  <hr></hr>
-                  <h4>Organizador</h4>
-                  <p></p>
-                  <h4>Maps</h4>
-                </div>
-
-                <div className="col-xs-12 col-sm-10">
-                  <div className="box ml-5">
-                    <ul>
-                      <li>Date</li>
-                      <li>Date</li>
-                      <li>Date</li>
-                      <li>Date</li>
-                      <li>Date</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <GameSidebarLeft user={user} Game={Game}  />
           </div>
           <div id="sidebar-right">
-            <h2>Vista del campo</h2>
+            <h2>Comentarios</h2>
             <hr></hr>
             <CommentBox />
           </div>
@@ -94,7 +51,7 @@ export default function GameDetail() {
   );
 }
 
-/* 
+/*
 <div className="blog-card">
           <div className="meta">
             <div

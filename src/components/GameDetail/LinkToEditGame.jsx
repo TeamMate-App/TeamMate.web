@@ -8,7 +8,7 @@ const LinktoEditGame = ({ Game }) => {
   const { user } = useContext(UserContext);
 
 /*   console.log("Link to edit user id",user.id) */
-  console.log("Link to edit game user",Game)
+  console.log("Link to edit GAME:",Game)
   return (
     <>
     <div>
@@ -19,7 +19,7 @@ const LinktoEditGame = ({ Game }) => {
             pathname: `/games/edit/${Game.id}`,
             state: Game,
           }} className="btn btn-primary"
-        > Editttttttttttt</Link>
+        > Edit</Link>
     {/*   )} */}
     </div>
     </>
