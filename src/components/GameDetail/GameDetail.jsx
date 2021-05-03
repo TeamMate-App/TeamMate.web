@@ -34,7 +34,7 @@ export default function GameDetail() {
           <div id="main-content">
             <h2>Vista del campo</h2>
             <hr></hr>
-            <p>Jugadores</p>
+            <p className="p-detailGame">Jugadores</p>
             <div>
               {user?.id === Game?.user ? (
                 <button className="btn btn-danger" onClick={remove}>

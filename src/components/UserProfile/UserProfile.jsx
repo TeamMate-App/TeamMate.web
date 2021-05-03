@@ -42,16 +42,16 @@ const UserProfile = () => {
             <ListUsers />
             </div>
             <div className="col-sm-2 card">
-              <p>Search sporting events</p>
+              <p className="p">Search sporting events</p>
             </div>
             <div className="col-sm-2 card">
-              <p>Organize Matches and Events</p>
+              <p className="p">Organize Matches and Events</p>
             </div>
             <div className="col-sm-2 card">
-              <p>Create a club</p>
+              <p className="p">Create a club</p>
             </div>
             <div className="col-sm-2 card">
-              <p>Look for players</p>
+              <p className="p">Look for players</p>
             </div>
           </div>
         </div>
