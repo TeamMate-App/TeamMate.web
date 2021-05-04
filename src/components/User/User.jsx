@@ -17,8 +17,8 @@ export default function User() {
   }
   return (
 
-    <div class="profile-bg container">
-      <div class="content-p">
+    <div className="profile-bg container">
+      <div className="content-p">
         <img src={user.image} alt={user.name} />
         <p className="p-name"><h3 className="h3-name">{user.name}</h3>
           {user.description}</p>
