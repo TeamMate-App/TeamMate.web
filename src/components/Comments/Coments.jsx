@@ -1,25 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Coments.css'
 import { CreateComment, getComments } from '../../services/CommentService'
 
 
 class CommentBox extends React.Component {
-  constructor() {
-    super();
+  conosle
+  constructor(props) {
+    super(props);
 
     this.state = {
       showComments: false,
       comments: [
-        ,
+
       ]
     };
   }
 
   componentDidMount() {
     getComments()
-      .then(res => {this.setState({ comments: res })
-    console.log("res", res)   
-    })
+      .then(res => {
+        this.setState({ comments: res })
+        console.log("res", res)
+      })
       .catch(err => (err))
 
 
@@ -28,6 +30,8 @@ class CommentBox extends React.Component {
 
 
   render() {
+    console.log( "ID DE GAME",this.props.Game.id)
+    console.log(this.props.user)
     const comments = this._getComments();
     let commentNodes;
     let buttonText = 'Show Comments';
@@ -54,9 +58,9 @@ class CommentBox extends React.Component {
 
   _addComment(author, body) {
     const comment = {
-      id: this.state.comments.length + 1,
       author,
       body,
+
     };
     this.setState({ comments: this.state.comments.concat([comment]) }); // *new array references help React stay fast, so concat works better than push here.
   }
