@@ -31,14 +31,14 @@ export default function GameDetail() {
 
   return (
     <>
-      <div className="pushnavbar">
+      <div className="shownavbar">
         <div className="wrap">
           <div id="main-content">
            
             <MainContent user={user} Game={Game} remove={remove} />
           </div>
           <div id="sidebar-left">
-            <GameSidebarLeft user={user} Game={Game}  />
+            <GameSidebarLeft user={user} Game={Game} date={Game.date} />
           </div>
           <div id="sidebar-right">
             <h2>Comentarios</h2>

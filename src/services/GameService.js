@@ -14,8 +14,8 @@ export const putEditMatch = (id, body) => {
   return http.put(`/games/edit/${id}`, body);
 };
 
-export const getCreateMatch = () => {
-  return http.get(`/games/create`);
+export const postCreateMatch = (body) => {
+  return http.post(`/games/create`,body);
 };
 
 export const deleteMatch = (id) => {
@@ -26,6 +26,6 @@ export const join = (GameId) => {
   return http.post(`/games/join/${GameId}`);
 };
 
-export const getPlayersSubs = (GameId) => {
-  return http.get(`/games/join/${GameId}/allPlayers`)
-}
+export const getPlayersSubs = (id, body) => {
+  return http.get(`/games/join/${id}/allplayers`, body);
+};

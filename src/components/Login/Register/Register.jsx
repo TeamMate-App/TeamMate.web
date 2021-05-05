@@ -101,6 +101,8 @@ const Login = ({ createUser }) => {
 
   return (
     <div className="Register">
+        <div className="shownavbar"></div>
+
       <Link to="/" className="">
         <span className="">Home </span>
       </Link>

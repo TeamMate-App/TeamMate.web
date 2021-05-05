@@ -9,6 +9,9 @@ export const create = (opts = {}) => {
 
   http.interceptors.request.use((request) => {
     //send token as authirization
+    /* console.log("token", getAccessToken())
+    console.log("opts", opts.useAccessToken) */
+
     if (opts.useAccessToken !== false) {
       request.headers.common.Authorization = `Bearer ${getAccessToken()}`;
     } else {

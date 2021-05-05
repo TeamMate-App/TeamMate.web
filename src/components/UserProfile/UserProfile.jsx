@@ -7,7 +7,10 @@ import ListUsers from "../User/ListUsers";
 
 const UserProfile = () => {
   return (
+    
     <div className="UserProfile">
+        <div className="shownavbar"></div>
+
       <Link to="/" className="">
         <span className="">Home </span>
       </Link>

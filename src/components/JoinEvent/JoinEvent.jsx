@@ -1,20 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { join } from "../../services/GameService";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const JoinEvent = ({ GameId }) => {
+const JoinEvent = ({ GameId, update }) => {
   const notify = (message) => toast(message);
-  console.log("Join event GAMEID:", GameId);
 
-  
+
   const handleClick = () => {
     join(GameId.id)
       .then((res) => {
         notify(res);
+        console.log("LLEGA HANDLECLICK",handleClick)
+        onclick()
       })
+
       .catch((error) => notify(error.message));
+   
   };
+  useEffect(() => {
+    join()
+  },[])
 
   return (
     <div>

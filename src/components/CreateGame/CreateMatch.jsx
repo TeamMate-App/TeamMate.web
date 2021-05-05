@@ -1,32 +1,33 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { postCreateMatch } from "../../services/GameService";
 
 class CreateMatch extends Component {
   state = {
-    Data: {
+    
       name: "",
       address: "",
       description: "",
-      image:"",
-    },
+      /* image:"", */
+    
   };
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState( { [e.target.name]: e.target.value });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
-    Object.entries(this.state.image).forEach(([key, value]) => {
+   /*  Object.entries(this.state.image).forEach(([key, value]) => {
     formData.append(key, value);
-     });
+     }); */
 
-    axios.post("http://localhost:3001/api/games/create", {
+    postCreateMatch( { 
         name: this.state.name,
         address: this.state.address,
         description: this.state.description,
-        image: this.state.image
+        /* image: this.state.image */
       })
       .then((response) => {
         this.props.history.push("/listGames");
@@ -38,6 +39,8 @@ class CreateMatch extends Component {
   render() {
     return (
       <div>
+        <div className="shownavbar"></div>
+
 
         <article className="container">
           <form onSubmit={this.handleSubmit}>
@@ -78,7 +81,7 @@ class CreateMatch extends Component {
                 name="address"
               />
             </div>
-
+{/* 
             <div className="form-group">
               <label htmlFor="Image">Image</label>
               <input
@@ -89,7 +92,7 @@ class CreateMatch extends Component {
                 onChange={this.handleChange}
                 name="image"
               />
-            </div>
+            </div> */}
 
 
             <div className="text-center">
