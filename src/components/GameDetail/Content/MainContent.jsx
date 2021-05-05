@@ -1,25 +1,45 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getPlayersSubs } from "../../../services/GameService";
-import JoinEvent from "../../JoinEvent/JoinEvent";
-import LinktoEditGame from "../LinkToEditGame";
+import { getPlayersSubs, join } from "../../../services/GameService";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./MainContent.css";
-/* import image from "./../images/Pista-de-padel-Manza.jpeg" */
 
 const MainContent = ({ Game, user, remove }) => {
   const [players, setPlayers] = useState([]);
-  
-  const { GameId } = useParams();
+  const { id } = useParams();
+  const notify = (message) => toast(message);
+  console.log("PLAYERS", players);
+  console.log("PLAYERS", players[0]?.user.name);
+
 
   useEffect(() => {
-    getPlayersSubs(players).then((playersSubscribed) => {
+    getPlayersSubs(id).then((playersSubscribed) => {
       setPlayers(playersSubscribed);
     });
-  }, [players]);
-  console.log("++++++PLAYERS+++++++", players[1]?.user.name );
+  }, [id]);
+  
+  
+  
+
+
+  const handleClick = () => {
+    join(Game.id)
+      .then((res) => {
+        notify(res);
+        getPlayersSubs(id).then((playersSubscribed) => {
+          setPlayers(playersSubscribed);
+        });
+      })
+  
+
+      .catch((error) => notify(error.message));
+  };
 
   return (
     <div>
+      <ToastContainer />
+
       <div>
         <h2>Vista del campo</h2>
         <hr className="mb-0"></hr>
@@ -32,12 +52,12 @@ const MainContent = ({ Game, user, remove }) => {
               Deleteeee
             </button>
           ) : (
-            <JoinEvent GameId={Game} />
+            <button className="btn btn-danger" onClick={handleClick}>
+              Join Event
+            </button>
           )}
         </div>
-        <div>
-          <LinktoEditGame user={user} Game={Game} />
-        </div>
+        <div>{/*  <LinktoEditGame Game={Game} /> */}</div>
 
         <h1>Players</h1>
         <hr></hr>
@@ -48,7 +68,6 @@ const MainContent = ({ Game, user, remove }) => {
             <h1>{players[1]?.user.name}</h1>
             <h1>{players[2]?.user.name}</h1>
             <h1>{players[3]?.user.name}</h1>
-
           </div>
           <div className="col-6">
             <h1>goal</h1>

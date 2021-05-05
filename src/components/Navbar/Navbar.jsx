@@ -5,16 +5,16 @@ import $ from "jquery";
 import { logout } from "../../stores/AccessTokenStore";
 
 const Navbar = () => {
-  const { user } = useContext(UserContext)
+  const { user } = useContext(UserContext);
   useEffect(() => {
-    $(".navTrigger").on(function () {
+    $(".navTrigger").click(function () {
       $(this).toggleClass("active");
-      console.log("Clicked menu");
+
       $("#mainListDiv").toggleClass("show_list");
       $("#mainListDiv").fadeIn();
     });
     $(window).scroll(function () {
-      if ($(document).scrollTop() > 2) {
+      if ($(document).scrollTop() > 50) {
         $(".nav").addClass("affix");
       } else {
         $(".nav").removeClass("affix");
@@ -31,7 +31,17 @@ const Navbar = () => {
         <div id="mainListDiv" className="main_list">
           <ul className="navlinks">
             <li>
-              <a href="/">Profile</a>
+              <a href="/">About</a>
+            </li>
+
+            <li>
+              <a href="/">Services</a>
+            </li>
+            <li>
+              <a href="/">Contact</a>
+            </li>
+            <li>
+              <a href="/userprofile">Profile</a>
             </li>
             <li>
               {user ? (

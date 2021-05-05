@@ -3,10 +3,17 @@ import "./UserProfile.css";
 import Logo from "../../assets/Movistar-Logo.png";
 import DeleteUser from "../DeleteUser/DeleteUser";
 import ListUsers from "../User/ListUsers";
+import { Link } from "react-router-dom";
 
 const UserProfile = () => {
   return (
+    
     <div className="UserProfile">
+        <div className="shownavbar"></div>
+
+      <Link to="/" className="">
+        <span className="">Home </span>
+      </Link>
       <div className="page-heading">
         <div className="media clearfix">
           <div className="media-left pr30">

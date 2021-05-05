@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "../Login/Login.css";
-import { Link, useHistory } from "react-router-dom";
+
 import Logo from "../../assets/Movistar-Logo.png";
 import { login } from "../../services/AuthService.js";
 import { setAccessToken } from "../../stores/AccessTokenStore";
 import { useUserContext } from "../../hooks/useUserContext";
-import GoogleAuth from "./GoogleLogin/GoogleLogin"
+import GoogleAuth from "./GoogleLogin/GoogleLogin";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line no-useless-escape
 const EMAIL_PATTERN = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -51,7 +53,7 @@ const Login = () => {
     },
     social: {
       google: "",
-    }
+    },
   });
 
   const [touched, setTouched] = useState({});
@@ -107,12 +109,13 @@ const Login = () => {
     }));
   };
 
-
   const { email, password } = state.fields;
   const { errors } = state;
 
   return (
     <div className="login">
+        <div className="shownavbar"></div>
+
       <Link to="/" className="">
         <span className="">Home</span>
       </Link>
@@ -120,12 +123,12 @@ const Login = () => {
         <form onSubmit={onSubmit}>
           <img className="mb-4" src={Logo} alt="" width="72" height="57" />
           <h1 className="h3 mb-3 fw-normal">Loguear cuenta</h1>
-
           <div className="form-floating">
             <label htmlFor="floatingInput">Email address</label>
             <input
-              className={`form-control ${touched.email && errors.email ? "is-invalid" : ""
-                }`}
+              className={`form-control ${
+                touched.email && errors.email ? "is-invalid" : ""
+              }`}
               type="email"
               id="email"
               name="email"
@@ -142,8 +145,9 @@ const Login = () => {
           <div className="form-floating">
             <label htmlFor="password">Password</label>
             <input
-              className={`form-control ${touched.password && errors.password ? "is-invalid" : ""
-                }`}
+              className={`form-control ${
+                touched.password && errors.password ? "is-invalid" : ""
+              }`}
               type="password"
               id="password"
               placeholder="password"
@@ -157,7 +161,6 @@ const Login = () => {
               <div className="invalid-feedback">{errors.password}</div>
             )}
           </div>
-
           <div className="checkbox mb-3 mt-4">
             <label className="">
               <input type="checkbox" value="remember-me" /> Remember me{" "}

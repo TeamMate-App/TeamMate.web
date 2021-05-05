@@ -3,25 +3,29 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../Contexts/UserContext";
 import "../ListGames/Events.css";
 
-
 const LinktoEditGame = ({ Game }) => {
-  const { user } = useContext(UserContext);
+   const { user } = useContext(UserContext);
 
-/*   console.log("Link to edit user id",user.id) */
-  console.log("Link to edit GAME:",Game)
+  /*   console.log("Link to edit user id",user.id) */
+  /*  console.log("Link to edit GAME:",Game) */
+  
   return (
     <>
-    <div>
-     
-     {/*  {user?.id === Game?.user.id && ( */}
-        <Link
-          to={{
-            pathname: `/games/edit/${Game.id}`,
-            state: Game,
-          }} className="btn btn-primary"
-        > Edit</Link>
-    {/*   )} */}
-    </div>
+      <div>
+        {user?.id === Game?.user.id ? (
+          <Link
+            to={{
+              pathname: `/games/edit/${Game.id}`,
+              state: Game,
+            }}
+            className="btn btn-primary"
+          >
+            {" "}
+            Edit
+          </Link>
+        )
+         : <div></div>}
+      </div>
     </>
   );
 };

@@ -1,9 +1,18 @@
-import React from "react";
-import JoinEvent from "../../JoinEvent/JoinEvent";
-import LinktoEditGame from "../LinkToEditGame";
+import moment from "moment";
 
-const GameSidebarLeft = ({ Game, user, remove }) => {
-  console.log("Link to edit game user", Game);
+const GameSidebarLeft = ({ Game, user, remove, date }) => {
+  console.log("Game Sidebar Left", Game);
+
+  console.log(date.toString());
+
+  console.log(moment(date).format("LL"));
+
+  const day = moment(date).format("dddd")
+  const day1 = moment(date).format("LL")
+  const hour = moment(date).format("LT")
+
+
+  console.log(Game)
 
   return (
     <div>
@@ -17,13 +26,13 @@ const GameSidebarLeft = ({ Game, user, remove }) => {
                 <td>
                   <i className="fas fa-calendar-alt"> </i>
                 </td>
-                <td className="address">Domingo, 12 de Mayo</td>
+                <td className="address">{day}, {day1}</td>
               </tr>
               <tr>
                 <td>
                   <i className="far fa-clock"></i>
                 </td>
-                <td className="address">16:00, 60 min</td>
+                <td className="address">{hour}, 60 min</td>
               </tr>
               <tr>
                 <td>

@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 62.5%;
+    font-size: 10px;
+}
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+/* Navbar section */
 
 .nav {
     width: 100%;
-    height: 65px;
+    height: 70px;
     position: fixed;
     line-height: 65px;
     text-align: center;
-    z-index: 50;
-    margin-top: -120px;
-    background-color: rgba(39, 37, 37, 0.9);
+    background-color: rgba(39, 37, 37, 0.514);
 }
 
 .nav div.logo {
@@ -24,7 +36,7 @@
 }
 
 .nav div.logo a:hover {
-    color: #00E676;
+    color: #000000;
 }
 
 .nav div.main_list {
@@ -56,9 +68,30 @@
 }
 
 .nav div.main_list ul li a:hover {
-    color: #0bcc6f;
+    color: #000000;
 }
 
+
+/* Home section */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    z-index: 10;
+    margin-top: -120px;
+}
 
 
 /* Media qurey section */
@@ -113,7 +146,6 @@
 
 
 /* Animation */
-/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
 
 .navTrigger {
     cursor: pointer;
@@ -306,7 +338,7 @@
 
 .affix {
     padding: 0;
-    background-color: rgba(39, 37, 37, 0.5);
+    background-color: #111;
 }
 
 
@@ -316,7 +348,7 @@
 
 .myH2 {
 	text-align:center;
-	font-size: 16px;
+	font-size: 4rem;
 }
 .myP {
 	text-align: justify;
@@ -326,6 +358,6 @@
 }
 @media all and (max-width:700px){
 	.myP {
-		padding:2%;
+		padding:20%;
 	}
 }
