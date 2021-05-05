@@ -24,7 +24,7 @@ const DeleteUser = () => {
 
 
     return (
-        <button className="w-80 btn btn-lg btn-outline-danger" onClick={remove}>Delete</button>
+        <button className="w-10 btn btn-lg btn-outline-danger" onClick={remove}>Delete</button>
     )
 }
 

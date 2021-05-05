@@ -6,9 +6,9 @@ const Footer = () => {
 
     return (
 
-        <div className="container-fluid">
+        <div className="container-fluid p-0">
 
-            <footer className=" bg-footer text-center text-lg-start border border-white mt-xl-5 pt-4" style={{ backgroundColor: "black", color: "white" }}>
+            <footer className=" bg-footer text-center text-lg-start border mt-xl-5 pt-4" style={{ backgroundColor: "#38372d", color: "white" }}>
 
                 <div className="container">
 
@@ -82,13 +82,10 @@ const Footer = () => {
 
                         <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
                             <h5 className="text-uppercase mb-4">Sign up to our newsletter</h5>
-
                             <div className="htmlForm-outline htmlForm-white mb-4">
                                 <input type="email" id="htmlForm5Example2" className="htmlForm-control" />
                                 <label className="htmlForm-label" htmlFor="htmlForm5Example2">Email address</label>
                             </div>
-
-                            <button type="submit" className="btn btn-light btn-block">Subscribe</button>
                         </div>
 
                     </div>

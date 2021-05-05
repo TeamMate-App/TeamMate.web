@@ -16,25 +16,18 @@ export default function User() {
     return "Loading...";
   }
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <div className="Product card" style={{ width: "18rem" }}>
-            <img src={user.image} className="card-img-top" alt={user.name} />
-            <div className="card-body">
-              <p className="card-title">{user.name}</p>
-              <p className="card-text">
-                {user.description}
-                {user.address}
-              </p>
-            </div>
-            <LinkToEdit
-              id={user.id}
-              User={user.user}
-            />
-          </div>
-        </div>
+
+    <div className="profile-bg container">
+      <div className="content-p">
+        <img src={user.image} alt={user.name} />
+        <p className="p-name"><h3 className="h3-name">{user.name}</h3>
+          {user.description}</p>
+        <small>{user.address}</small>
       </div>
+      <LinkToEdit
+        id={user.id}
+        User={user.user}
+      />
     </div>
 
   );
