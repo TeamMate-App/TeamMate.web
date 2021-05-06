@@ -6,6 +6,7 @@ import {
   unsubscribe,
 } from "../../../services/GameService";
 import { ToastContainer, toast } from "react-toastify";
+import { getUserInfo } from "../../../services/UserService";
 import "react-toastify/dist/ReactToastify.css";
 import "./MainContent.css";
 
@@ -13,8 +14,14 @@ const MainContent = ({ Game, user, remove }) => {
   const [players, setPlayers] = useState([]);
   const { id } = useParams();
   const notify = (message) => toast(message);
-    console.log("PLAYERS", players);
-  console.log("Use effect",user)
+  console.log("PLAYERS", players);
+  console.log("PLAYERS", players[0]?.user.name);
+  let email;
+
+  getUserInfo().then((response) => {
+    console.log("response raul", response);
+    email = response.email;
+  });
 
   useEffect(() => {
     getPlayersSubs(id).then((playersSubscribed) => {
@@ -23,7 +30,8 @@ const MainContent = ({ Game, user, remove }) => {
   }, [id]);
 
   const handleClick = () => {
-    join(Game.id)
+    console.log("raul email", email);
+    join(Game.id, email)
       .then((res) => {
         notify(res);
         getPlayersSubs(id).then((playersSubscribed) => {

@@ -84,7 +84,7 @@ export default function GameDetail() {
             <div id="sidebar-right">
               <h2>Comentarios</h2>
               <hr></hr>
-              <CommentBox />
+              <CommentBox user={user} Game={Game} />
             </div>
           </div>
         )}

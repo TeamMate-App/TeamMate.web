@@ -12,12 +12,13 @@ const center = {
 };
 
 function MyComponent() {
+  console.log(process.env.REACT_APP_G_MAPS_KEY);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.REACT_APP_G_MAPS_KEY,
   });
 
-  const [map, setMap] = React.useState(null);
+  const [map, setMap] = React.useState(null, center);
 
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
@@ -33,7 +34,7 @@ function MyComponent() {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={7}
+      zoom={3}
       onLoad={onLoad}
       onUnmount={onUnmount}
     >

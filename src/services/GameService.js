@@ -22,8 +22,8 @@ export const deleteMatch = (id) => {
   return http.post(`/games/delete/${id}`);
 };
 
-export const join = (GameId) => {
-  return http.post(`/games/join/${GameId}`);
+export const join = (GameId, email) => {
+  return http.post(`/games/join/${GameId}`,{email});
 };
 
 export const unsubscribe = (gameid) => {

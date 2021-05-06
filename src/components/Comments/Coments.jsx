@@ -1,25 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Coments.css'
 import { CreateComment, getComments } from '../../services/CommentService'
+import {getUserInfo} from "../../services/UserService"
 
 
 class CommentBox extends React.Component {
-  constructor() {
-    super();
+
+  constructor(props) {
+    super(props);
 
     this.state = {
       showComments: false,
-      comments: [
-        ,
-      ]
+      comments: []
     };
   }
 
   componentDidMount() {
     getComments()
-      .then(res => {this.setState({ comments: res })
-    console.log("res", res)   
-    })
+      .then(res => {
+        this.setState({
+          comments: res.filter((c) => { 
+            console.log("C",c.game===this.props.Game.id)
+            return c.game === this.props.Game.id })
+            
+           
+            
+        })
+      })
       .catch(err => (err))
 
 
@@ -28,7 +35,10 @@ class CommentBox extends React.Component {
 
 
   render() {
+    console.log("ID DE GAME", this.props.Game.id)
+    console.log(this.props.user)
     const comments = this._getComments();
+    console.log(comments)
     let commentNodes;
     let buttonText = 'Show Comments';
 
@@ -39,7 +49,7 @@ class CommentBox extends React.Component {
 
     return (
       <div className="comment-box">
-        <CommentForm addComment={this._addComment.bind(this)} />
+        <CommentForm GameID={this.props.Game.id} addComment={this._addComment.bind(this)} />
         <button id="comment-reveal" onClick={this._handleClick.bind(this)}>
           {buttonText}
         </button>
@@ -53,10 +63,11 @@ class CommentBox extends React.Component {
   } // end render
 
   _addComment(author, body) {
+    console.log(author, body, this.props.Game.id)
     const comment = {
-      id: this.state.comments.length + 1,
       author,
       body,
+      game: this.props.Game.id
     };
     this.setState({ comments: this.state.comments.concat([comment]) }); // *new array references help React stay fast, so concat works better than push here.
   }
@@ -90,11 +101,14 @@ class CommentBox extends React.Component {
 } // end CommentBox component
 
 class CommentForm extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <form className="comment-form" onSubmit={this._handleSubmit.bind(this)}>
         <div className="comment-form-fields">
-          <input placeholder="Name" required ref={(input) => this._author = input}></input><br />
+          
           <textarea placeholder="Comment" rows="4" required ref={(textarea) => this._body = textarea}></textarea>
         </div>
         <div className="comment-form-actions">
@@ -102,16 +116,18 @@ class CommentForm extends React.Component {
         </div>
       </form>
     );
-  } // end render
+  }
+  // end render
 
   _handleSubmit(event) {
     event.preventDefault();   // prevents page from reloading on submit
-    let author = this._author;
-    let body = this._body;
-
-
-    CreateComment(author.value, body.value)
-    this.props.addComment(author.value, body.value);
+    getUserInfo().then((response) =>{
+      let author= response.name
+      let body = this._body;
+      console.log("Raul seleccion", author)
+      CreateComment(author, body.value, this.props.GameID)
+      this.props.addComment(author, body.value, this.props.GameID);
+    })
   }
 } // end CommentForm component
 
