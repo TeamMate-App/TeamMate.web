@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getPlayersSubs, join } from "../../../services/GameService";
 import { ToastContainer, toast } from "react-toastify";
+import {getUserInfo} from "../../../services/UserService";
 import "react-toastify/dist/ReactToastify.css";
 import "./MainContent.css";
 
@@ -11,7 +12,10 @@ const MainContent = ({ Game, user, remove }) => {
   const notify = (message) => toast(message);
   console.log("PLAYERS", players);
   console.log("PLAYERS", players[0]?.user.name);
-
+  var email
+  getUserInfo().then((response) =>{
+    console.log("response raul", response)
+     email= response.email})
 
   useEffect(() => {
     getPlayersSubs(id).then((playersSubscribed) => {
@@ -24,7 +28,8 @@ const MainContent = ({ Game, user, remove }) => {
 
 
   const handleClick = () => {
-    join(Game.id)
+    console.log("raul email",email)
+    join(Game.id, email)
       .then((res) => {
         notify(res);
         getPlayersSubs(id).then((playersSubscribed) => {
