@@ -18,7 +18,7 @@ console.log(process.env.REACT_APP_G_MAPS_KEY)
     googleMapsApiKey: process.env.REACT_APP_G_MAPS_KEY
   })
 
-  const [map, setMap] = React.useState(null)
+  const [map, setMap] = React.useState(null, center)
 
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds();
@@ -34,7 +34,7 @@ console.log(process.env.REACT_APP_G_MAPS_KEY)
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={7}
+        zoom={3}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
