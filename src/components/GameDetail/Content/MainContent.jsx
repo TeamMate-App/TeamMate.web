@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getPlayersSubs, join } from "../../../services/GameService";
+import {
+  getPlayersSubs,
+  join,
+  unsubscribe,
+} from "../../../services/GameService";
 import { ToastContainer, toast } from "react-toastify";
-import {getUserInfo} from "../../../services/UserService";
+import { getUserInfo } from "../../../services/UserService";
 import "react-toastify/dist/ReactToastify.css";
 import "./MainContent.css";
 
@@ -12,23 +16,21 @@ const MainContent = ({ Game, user, remove }) => {
   const notify = (message) => toast(message);
   console.log("PLAYERS", players);
   console.log("PLAYERS", players[0]?.user.name);
-  var email
-  getUserInfo().then((response) =>{
-    console.log("response raul", response)
-     email= response.email})
+  let email;
+
+  getUserInfo().then((response) => {
+    console.log("response raul", response);
+    email = response.email;
+  });
 
   useEffect(() => {
     getPlayersSubs(id).then((playersSubscribed) => {
       setPlayers(playersSubscribed);
     });
   }, [id]);
-  
-  
-  
-
 
   const handleClick = () => {
-    console.log("raul email",email)
+    console.log("raul email", email);
     join(Game.id, email)
       .then((res) => {
         notify(res);
@@ -36,8 +38,17 @@ const MainContent = ({ Game, user, remove }) => {
           setPlayers(playersSubscribed);
         });
       })
-  
 
+      .catch((error) => notify(error.message));
+  };
+
+  const handleUnsubscribe = () => {
+    unsubscribe(Game.id)
+      .then((res) => {
+        notify(res);
+        setPlayers(players.filter((player) => player.user.id !== user.id));
+        console.log("PLAYERS", players);
+      })
       .catch((error) => notify(error.message));
   };
 
@@ -54,7 +65,7 @@ const MainContent = ({ Game, user, remove }) => {
         <div className="">
           {user?.id === Game?.user ? (
             <button className="btn btn-danger" onClick={remove}>
-              Deleteeee
+              Deletee
             </button>
           ) : (
             <button className="btn btn-danger" onClick={handleClick}>
@@ -62,7 +73,10 @@ const MainContent = ({ Game, user, remove }) => {
             </button>
           )}
         </div>
-        <div>{/*  <LinktoEditGame Game={Game} /> */}</div>
+
+        <button className="btn btn-danger" onClick={handleUnsubscribe}>
+          Unsubscribe
+        </button>
 
         <h1>Players</h1>
         <hr></hr>
@@ -75,7 +89,7 @@ const MainContent = ({ Game, user, remove }) => {
             <h1>{players[3]?.user.name}</h1>
           </div>
           <div className="col-6">
-            <h1>goal</h1>
+            <h1>{players[0]?.user.name}</h1>
           </div>
         </div>
       </div>

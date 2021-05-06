@@ -64,8 +64,8 @@ const GameSidebarLeft = ({ Game, user, remove, date }) => {
 
         <hr></hr>
         <h4>Organizador</h4>
-        <p>User creator</p>
-        <p>{Game.user}</p>
+        <p className="p-0"> User creator</p>
+        <p className="p-0">{Game.user}</p>
         <hr></hr>
 
         <h4>Maps</h4>

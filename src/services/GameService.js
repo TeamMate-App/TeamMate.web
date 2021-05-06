@@ -26,6 +26,11 @@ export const join = (GameId, email) => {
   return http.post(`/games/join/${GameId}`,{email});
 };
 
+export const unsubscribe = (gameid) => {
+  return http.delete(`/games/join/${gameid}`);
+};
+
 export const getPlayersSubs = (id, body) => {
   return http.get(`/games/join/${id}/allplayers`, body);
 };
+

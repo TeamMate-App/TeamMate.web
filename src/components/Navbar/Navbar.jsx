@@ -6,6 +6,8 @@ import { logout } from "../../stores/AccessTokenStore";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
+  console.log(user)
+ 
   useEffect(() => {
     $(".navTrigger").click(function () {
       $(this).toggleClass("active");
