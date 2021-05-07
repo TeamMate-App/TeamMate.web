@@ -30,7 +30,7 @@
 @keyframes animatedBackground {
     0% {
         /* opacity: .9; */
-        background-image: url("./manuel-pappacena-zTwzxr4BbTA-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409267/Teammate/manuel-pappacena-zTwzxr4BbTA-unsplash_haku6r.jpg");
         background-position: 50%;
         filter: grayscale(50%);
         
@@ -38,7 +38,7 @@
 
     27.9999999999% {
         /* opacity: .9; */
-        background-image: url("./manuel-pappacena-zTwzxr4BbTA-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409267/Teammate/manuel-pappacena-zTwzxr4BbTA-unsplash_haku6r.jpg");
         background-position: 0 0;
         filter: grayscale(0%);
 
@@ -46,14 +46,14 @@
     }
 
     28% {
-        background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409281/Teammate/hermes-rivera-newhL3aprGk-unsplash_talvba.jpg");
         background-position: 0 0;
         filter: grayscale(50%);
         
     }
 
     55.99999999999999% {
-        background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409281/Teammate/hermes-rivera-newhL3aprGk-unsplash_talvba.jpg");
         background-position: 50%;
         filter: grayscale(0%);
 
@@ -62,14 +62,14 @@
 
     56% {
         /* opacity: .9; */
-        background-image: url("./tomasz-krawczyk-M2x3A8Q4JbY-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409273/Teammate/tomasz-krawczyk-M2x3A8Q4JbY-unsplash_ruql83.jpg");
         background-position: 50%;
         filter: grayscale(50%);
     }
 
     84% {
         /* opacity: .9; */
-        background-image: url("./tomasz-krawczyk-M2x3A8Q4JbY-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409273/Teammate/tomasz-krawczyk-M2x3A8Q4JbY-unsplash_ruql83.jpg");
         background-position: 0 0;
         filter: grayscale(0%);
 
@@ -77,14 +77,14 @@
     }
 
     85% {
-        background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409281/Teammate/hermes-rivera-newhL3aprGk-unsplash_talvba.jpg");
         background-position: 0 0;
         filter: grayscale(50%);
         
     }
 
     100% {
-        background-image: url("./hermes-rivera-newhL3aprGk-unsplash.jpg");
+        background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409281/Teammate/hermes-rivera-newhL3aprGk-unsplash_talvba.jpg");
         background-position: 50%;
         filter: grayscale(0%);
 
