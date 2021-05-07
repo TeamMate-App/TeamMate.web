@@ -7,15 +7,26 @@ import { Link } from "react-router-dom";
 
 const UserProfile = () => {
   return (
+    
     <div className="UserProfile">
-      <div className="shownavbar"></div>
+        <div className="shownavbar"></div>
 
       <Link to="/" className="">
         <span className="">Home </span>
       </Link>
       <div className="page-heading">
         <div className="media clearfix">
-          <div className="media-left pr30"></div>
+          <div className="media-left pr30">
+
+
+
+
+
+
+
+
+
+          </div>
 
           <div className="media-body va-m">
             <a href="/">
@@ -27,7 +38,10 @@ const UserProfile = () => {
                 height="100"
               />
             </a>
-            <p className="lead">What can I do now?</p>
+            <p className="lead">
+              What can I do now?
+            </p>
+
           </div>
         </div>
         <div className="container">
@@ -36,14 +50,10 @@ const UserProfile = () => {
               <ListUsers />
             </div>
             <div className="col-sm-2 card">
-              <p className="p">
-                <a href="/ListGames">Search sporting events</a>
-              </p>
+              <p className="p"><a href="/ListGames">Search sporting events</a></p>
             </div>
             <div className="col-sm-2 card">
-              <p className="p">
-                <a href="/createMatch">Organize Matches and Events</a>
-              </p>
+              <p className="p"><a href="/createMatch">Organize Matches and Events</a></p>
             </div>
             <div className="col-sm-2 card">
               <p className="p">Create a club</p>

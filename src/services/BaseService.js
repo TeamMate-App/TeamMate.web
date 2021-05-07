@@ -3,7 +3,7 @@ import { getAccessToken, logout } from "../stores/AccessTokenStore";
 
 export const create = (opts = {}) => {
   const http = axios.create({
-    baseURL: `${process.env.REACT_APP_API_HOST}/api`, //pondremos la dirección de heroku
+    baseURL: "http://localhost:3001/api", //pondremos la dirección de heroku
     ...opts,
   });
 

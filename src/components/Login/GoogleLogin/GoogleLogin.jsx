@@ -16,9 +16,7 @@ const GoogleAuth = () => {
       url: "http://localhost:3001/api/googlelogin",
       data: { tokenId: response.tokenId },
     }).then((response) => {
-      console.log("Google login success", response);
-      console.log("response.data",response.data)
-      setAccessToken(response.data.token);
+      setAccessToken(response.access_token);
       doLogin().then(() => push("/userprofile"));
     });
   };
