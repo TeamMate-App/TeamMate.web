@@ -1,18 +1,17 @@
 import moment from "moment";
 
 const GameSidebarLeft = ({ Game, user, remove, date }) => {
-  console.log("Game Sidebar Left", Game);
 
-  console.log(date.toString());
+  
+  const day = moment(Game.date).format("dddd")
+  const day1 = moment(Game.date).format("LL")
+  const hour = moment(Game.date).format("LT")
+  
+  console.log(day)
+  console.log(Game.date)
 
-  console.log(moment(date).format("LL"));
-
-  const day = moment(date).format("dddd")
-  const day1 = moment(date).format("LL")
-  const hour = moment(date).format("LT")
 
 
-  console.log(Game)
 
   return (
     <div>
@@ -50,7 +49,7 @@ const GameSidebarLeft = ({ Game, user, remove, date }) => {
                 <td>
                   <i className="fas fa-euro-sign"></i>
                 </td>
-                <td className="address">5.00 €</td>
+                <td className="address">{Game?.price || "0,00"} €</td>
               </tr>
               <tr>
                 <td>

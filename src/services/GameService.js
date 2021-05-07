@@ -2,8 +2,8 @@ import { create } from "./BaseService";
 
 const http = create();
 
-export const getGames = () => {
-  return http.get("/games");
+export const getGames = (body) => {
+  return http.get("/games", body);
 };
 
 export const getMatch = (id) => {

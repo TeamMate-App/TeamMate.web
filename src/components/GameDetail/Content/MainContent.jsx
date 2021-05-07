@@ -6,20 +6,17 @@ import {
   unsubscribe,
 } from "../../../services/GameService";
 import { ToastContainer, toast } from "react-toastify";
-import { getUserInfo } from "../../../services/UserService";
 import "react-toastify/dist/ReactToastify.css";
+import { getUserInfo } from "../../../services/UserService";
 import "./MainContent.css";
 
 const MainContent = ({ Game, user, remove }) => {
   const [players, setPlayers] = useState([]);
   const { id } = useParams();
   const notify = (message) => toast(message);
-  console.log("PLAYERS", players);
-  console.log("PLAYERS", players[0]?.user.name);
   let email;
 
   getUserInfo().then((response) => {
-    console.log("response raul", response);
     email = response.email;
   });
 
@@ -30,7 +27,6 @@ const MainContent = ({ Game, user, remove }) => {
   }, [id]);
 
   const handleClick = () => {
-    console.log("raul email", email);
     join(Game.id, email)
       .then((res) => {
         notify(res);
@@ -47,7 +43,6 @@ const MainContent = ({ Game, user, remove }) => {
       .then((res) => {
         notify(res);
         setPlayers(players.filter((player) => player.user.id !== user.id));
-        console.log("PLAYERS", players);
       })
       .catch((error) => notify(error.message));
   };
@@ -62,6 +57,7 @@ const MainContent = ({ Game, user, remove }) => {
       </div>
       <div className="backgroundCourt" alt="pista"></div>
       <div className="container">
+        <h2>Organizador: {players[0]?.user?.name}</h2>
         <div className="">
           {user?.id === Game?.user ? (
             <button className="btn btn-danger" onClick={remove}>
@@ -83,13 +79,13 @@ const MainContent = ({ Game, user, remove }) => {
 
         <div className="row">
           <div className="col-6">
-            <h1>{players[0]?.user.name}</h1>
-            <h1>{players[1]?.user.name}</h1>
-            <h1>{players[2]?.user.name}</h1>
-            <h1>{players[3]?.user.name}</h1>
+            <h1>{players[0]?.user?.name}</h1>
+            <h1>{players[1]?.user?.name}</h1>
+            <h1>{players[2]?.user?.name}</h1>
+            <h1>{players[3]?.user?.name}</h1>
           </div>
           <div className="col-6">
-            <h1>{players[0]?.user.name}</h1>
+            <h1>{players[0]?.user?.name}</h1>
           </div>
         </div>
       </div>

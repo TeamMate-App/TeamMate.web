@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 import Home from "../Home/Home";
-import UserProfile from "../UserProfile/UserProfile"
+import UserProfile from "../UserProfile/UserProfile";
 import Login from "../Login/Login";
 import Register from "../Login/Register/Register";
 import { register } from "../../services/UserService";
@@ -11,7 +11,6 @@ import LinktoEditGame from "../GameDetail/LinkToEditGame";
 import ListGames from "./../ListGames/ListGames";
 import GameDetail from "../GameDetail/GameDetail";
 
-
 const AppRouter = () => {
   const createUser = () => {
     return register();
@@ -19,7 +18,6 @@ const AppRouter = () => {
 
   return (
     <>
-     
       <Switch>
         <Route exact path="/" component={Home} />
         <Route
@@ -38,6 +36,7 @@ const AppRouter = () => {
           path="/games/edit/:id"
           render={(props) => <LinktoEditGame {...props} />}
         />
+
         <Route exact path="/createMatch" component={CreateMatch} />
       </Switch>
     </>

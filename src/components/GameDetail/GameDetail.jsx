@@ -24,7 +24,11 @@ export default function GameDetail() {
   const { id } = useParams();
   const { push } = useHistory();
 
-  console.log("GAME", Game?.location.longitude[0] /* .location.latitude */);
+
+
+  console.log("GAMEEEEE ****************************", Game?.location.coordinates[0]);
+/*   console.log("COOORDINATES ****************************", Game); */
+
 
   useEffect(() => {
     getMatch(id).then((Game) => setGame(Game));
@@ -60,15 +64,15 @@ export default function GameDetail() {
                 <GoogleMapReact
                   bootstrapURLKeys={{ key: process.env.REACT_APP_G_MAPS_KEY }}
                   defaultCenter={{
-                    lat: Game?.location.latitude[0],
-                    lng: Game?.location.longitude[0],
+                    lat: Game?.location.coordinates[0],
+                    lng: Game?.location.coordinates[1],
                   }}
                   defaultZoom={17}
                 >
-                  {Game?.location.latitude[0] ? (
+                  {Game?.location.coordinates[0] ? (
                     <Marker
-                      lat={Game?.location.latitude[0]}
-                      lng={Game?.location.longitude[0]}
+                      lat={Game?.location.coordinates[0]}
+                      lng={Game?.location.coordinates[1]}
                       className="p-0"
                     >
                       <button className="crime-marker p-0">
