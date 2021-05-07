@@ -16,7 +16,7 @@ const MainContent = ({ Game, user, remove }) => {
   const notify = (message) => toast(message);
   console.log("PLAYERS", players);
   console.log("PLAYERS", players[0]?.user.name);
-  let email;
+  var email;
 
   getUserInfo().then((response) => {
     console.log("response raul", response);
@@ -43,7 +43,8 @@ const MainContent = ({ Game, user, remove }) => {
   };
 
   const handleUnsubscribe = () => {
-    unsubscribe(Game.id)
+    unsubscribe(Game.id, email)
+  
       .then((res) => {
         notify(res);
         setPlayers(players.filter((player) => player.user.id !== user.id));
