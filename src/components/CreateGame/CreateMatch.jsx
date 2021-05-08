@@ -1,110 +1,156 @@
-import axios from "axios";
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router";
 import { postCreateMatch } from "../../services/GameService";
+import { getMatch } from "../../services/GameService";
+import "./CreateMatch.css";
+import MapaForm from "./MapaForm";
+import GoogleMapReact from "google-map-react";
+import image from "../GameDetail/images/ball (1).svg";
 
-class CreateMatch extends Component {
-  state = {
-    
-      name: "",
-      address: "",
-      description: "",
-      /* image:"", */
-    
+import FormCreateMatch from "./FormCreateMatch";
+
+const Marker = ({ children }) => children;
+const containerStyle = {
+  width: "550px",
+  height: "100px",
+};
+
+export default function CreateMatch() {
+  const { id } = useParams();
+  const { push } = useHistory();
+  const [match, setMatch] = useState({});
+
+  const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    getMatch(id).then((match) => setMatch(match));
+  }, [id]);
+
+  const onChange = (event) => {
+    setMatch((old) => {
+      let value = event.target.value;
+      if (event.target.type === "file") {
+        value = event.target.files[0];
+      } else if (event.target.tagName === "SELECT") {
+        value = [...event.target.selectedOptions].map((o) => o.value);
+      }
+      return { ...old, [event.target.id]: value };
+    });
   };
 
-  handleChange = (e) => {
-    this.setState( { [e.target.name]: e.target.value });
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (event) => {
+    event.preventDefault();
     const formData = new FormData();
-   /*  Object.entries(this.state.image).forEach(([key, value]) => {
-    formData.append(key, value);
-     }); */
+    Object.entries(match).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+    formData.append("latitude", location.lat);
+    formData.append("longitude", location.lng);
 
-    postCreateMatch( { 
-        name: this.state.name,
-        address: this.state.address,
-        description: this.state.description,
-        /* image: this.state.image */
+    console.log("match***********************", match);
+    postCreateMatch(formData)
+      .then(() => {
+        push("/");
       })
-      .then((response) => {
-        this.props.history.push("/listGames");
-
-      })
-      .catch((error) => console.log(error));
+      .catch((e) => {
+        if (e.response.status === 400) {
+          setErrors(e.response.data.errors);
+        }
+      });
   };
 
-  render() {
-    return (
-      <div>
-        <div className="shownavbar"></div>
+  const [location, setLocation] = useState({});
 
+  const handleClickMap = (location) => {
+    const lat = location.lat;
+    const lng = location.lng;
+    console.log("onClick map: ", lat, lng);
+    console.log(location.lat);
+    setLocation({ lat, lng });
+  };
 
-        <article className="container">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input
-                required
-                type="text"
-                className="form-control"
-                id="name"
-                onChange={this.handleChange}
-                name="name"
-              />
-            </div>
-
-
-
-            <div className="form-group">
-              <label htmlFor="description">Description</label>
-
-              <textarea
-                name="description"
-                className="form-control"
-                id="description"
-                onChange={this.handleChange}
-                rows={7}
-              ></textarea>
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="address">Address</label>
-              <input
-                required
-                type="text"
-                className="form-control"
-                id="address"
-                onChange={this.handleChange}
-                name="address"
-              />
-            </div>
-{/* 
-            <div className="form-group">
-              <label htmlFor="Image">Image</label>
-              <input
-                required
-                type="file"
-                className=""
-                id="image"
-                onChange={this.handleChange}
-                name="image"
-              />
-            </div> */}
-
-
-            <div className="text-center">
-              <button type="submit" className="btn btn-primary ">
-                Create
+  return (
+    <>
+      <form onSubmit={onSubmit} className="container">
+        <FormCreateMatch
+          name="name"
+          id="name"
+          onChange={onChange}
+          error={errors.name}
+        />
+        <FormCreateMatch
+          name="address"
+          id="address"
+          onChange={onChange}
+          error={errors.description}
+        />
+        <FormCreateMatch
+          name="image"
+          id="image"
+          onChange={onChange}
+          error={errors.image}
+          type="file"
+        />
+        <FormCreateMatch
+          name="price"
+          id="price"
+          onChange={onChange}
+          error={errors.image}
+          type="number"
+        />{" "}
+        <FormCreateMatch
+          name="date"
+          id="date"
+          onChange={onChange}
+          error={errors.image}
+          type="datetime-local"
+        />
+        <FormCreateMatch
+          name="latitude"
+          id="location"
+          error={errors.image}
+          value={location.lat}
+          type="text"
+        />
+        <FormCreateMatch
+          name="longitude"
+          id="location"
+          error={errors.image}
+          value={location.lng}
+          type="text"
+        />
+        <button type="submit" className="btn btn-primary mt-3">
+          Create
+        </button>
+      </form>
+      <div className="container mapbox ">
+        <h1>maps</h1>
+        <div
+          className="container mapDetailGame"
+          style={{ height: "300px", width: "100%" }}
+        >
+          <GoogleMapReact
+            mapContainerStyle={containerStyle}
+            onClick={(location) => handleClickMap(location)}
+            bootstrapURLKeys={{ key: process.env.REACT_APP_G_MAPS_KEY }}
+            defaultCenter={{
+              lat: 40,
+              lng: -3,
+            }}
+            defaultZoom={17}
+          >
+            <Marker lat={location.lat} lng={location.lng} className="p-0">
+              <button className="crime-marker p-0">
+                <img src={image} alt="ballMark" />
               </button>
-            </div>
-          </form>
-        </article>
-      </div>
-    );
-  }
-}
+            </Marker>
+          </GoogleMapReact>
 
-export default CreateMatch;
+          <h3>
+            You clicked: Latitud: {location.lat}, Longitud: {location.lng}
+          </h3>
+        </div>
+      </div>
+    </>
+  );
+}

@@ -8,7 +8,7 @@ const Footer = () => {
 
         <div className="container-fluid p-0">
 
-            <footer className=" bg-footer text-center text-lg-start border mt-xl-5 pt-4" style={{ backgroundColor: "#111111", color: "white" }}>
+            <footer className=" bg-footer text-center text-lg-start border mt-xl-5 pt-4" style={{ backgroundColor: "#38372d", color: "white" }}>
 
                 <div className="container">
 
@@ -67,7 +67,7 @@ const Footer = () => {
                                     <a href="https://mountainmadnesss.herokuapp.com/" className="text-white">MountainMadness</a>
                                 </li>
                                 <li>
-                                    <a href="https://runeat.herokuapp.com/" className="text-white">RunEat</a>
+                                    <a href="#!" className="text-white">Add Projects</a>
                                 </li>
                                 <li>
                                     <a href="#!" className="text-white">Add Projects</a>
@@ -96,7 +96,7 @@ const Footer = () => {
 
                 <div className="text-center p-3 border-top border-white">
                     © 2021 Copyright:
-      <a className="text-white" href="/">Teammate</a>
+      <a className="text-white" href="">Teammate</a>
                 </div>
 
             </footer>

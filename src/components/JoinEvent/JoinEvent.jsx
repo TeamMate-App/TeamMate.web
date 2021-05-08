@@ -11,7 +11,6 @@ const JoinEvent = ({ GameId, update }) => {
     join(GameId.id)
       .then((res) => {
         notify(res);
-        console.log("LLEGA HANDLECLICK",handleClick)
         onclick()
       })
 

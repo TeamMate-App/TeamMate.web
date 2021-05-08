@@ -2,8 +2,8 @@ import { create } from "./BaseService";
 
 const http = create();
 
-export const getGames = () => {
-  return http.get("/games");
+export const getGames = (body) => {
+  return http.get("/games", body);
 };
 
 export const getMatch = (id) => {
@@ -26,8 +26,8 @@ export const join = (GameId, email) => {
   return http.post(`/games/join/${GameId}`,{email});
 };
 
-export const unsubscribe = (gameid, email) => { console.log("email de RAUL",email)
-  return http.delete(`/games/join/${gameid}`,{email});
+export const unsubscribe = (gameid) => {
+  return http.delete(`/games/join/${gameid}`);
 };
 
 export const getPlayersSubs = (id, body) => {

@@ -6,8 +6,6 @@ import "../ListGames/Events.css";
 const LinktoEditGame = ({ Game }) => {
    const { user } = useContext(UserContext);
 
-  /*   console.log("Link to edit user id",user.id) */
-  /*  console.log("Link to edit GAME:",Game) */
   
   return (
     <>

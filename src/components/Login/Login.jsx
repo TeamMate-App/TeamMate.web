@@ -122,7 +122,7 @@ const Login = () => {
       <main className="form-signin">
         <form onSubmit={onSubmit}>
           <img className="mb-4" src={Logo} alt="" width="72" height="57" />
-          <h1 className="mb-3 fw-normal">Loguear cuenta</h1>
+          <h1 className="h3 mb-3 fw-normal">Loguear cuenta</h1>
           <div className="form-floating">
             <label htmlFor="floatingInput">Email address</label>
             <input

@@ -5,14 +5,13 @@ import { activate } from "../../../services/AuthAccount.js"
 
 const ActivateAccount = () => {
     const { token } = useParams();
-    const [activated, setActivate] = useState(false)
+    const [, setActivate] = useState(false)
 
 
 
     useEffect(() => {
       activate(token)
       .then (res =>{
-        console.log("res", res)
         if(res.status === 204 ){
           setActivate (true)
         }

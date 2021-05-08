@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Coments.css'
 import { CreateComment, getComments } from '../../services/CommentService'
 import {getUserInfo} from "../../services/UserService"
@@ -20,7 +20,6 @@ class CommentBox extends React.Component {
       .then(res => {
         this.setState({
           comments: res.filter((c) => { 
-            console.log("C",c.game===this.props.Game.id)
             return c.game === this.props.Game.id })
             
            
@@ -35,10 +34,7 @@ class CommentBox extends React.Component {
 
 
   render() {
-    console.log("ID DE GAME", this.props.Game.id)
-    console.log(this.props.user)
     const comments = this._getComments();
-    console.log(comments)
     let commentNodes;
     let buttonText = 'Show Comments';
 
@@ -63,7 +59,6 @@ class CommentBox extends React.Component {
   } // end render
 
   _addComment(author, body) {
-    console.log(author, body, this.props.Game.id)
     const comment = {
       author,
       body,
@@ -124,7 +119,6 @@ class CommentForm extends React.Component {
     getUserInfo().then((response) =>{
       let author= response.name
       let body = this._body;
-      console.log("Raul seleccion", author)
       CreateComment(author, body.value, this.props.GameID)
       this.props.addComment(author, body.value, this.props.GameID);
     })
