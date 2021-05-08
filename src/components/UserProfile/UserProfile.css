@@ -1,19 +1,29 @@
-.p{
-    padding:5px;
+.link-profile-user {
+    color: #7aab5a;
 }
 
-.col-sm-2 {
-    height: 80px;
-    align-items: center;
-    padding:0px 15px;
-    
-}
-.media-body {
-    background-color: #3c3a3a;
-    
+.p-user-profile {
+    padding: 7px;
 }
 
-.lead {
-    color: white;
-    font:bold
+.espace-user {
+    padding: 15px;
+
 }
+.title-user-profile {
+    text-align: left;
+}
+
+.info-user-profile{
+    background-color: #e4efdf;
+    
+}
+.espace-user {
+    text-align: center;
+}
+
+.info {
+    background-color: #7aab5a;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+

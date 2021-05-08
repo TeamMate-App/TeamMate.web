@@ -1,3 +1,4 @@
+import { ContactlessOutlined } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { editUser, getUserInfo } from "../../../services/UserService.js";
@@ -7,8 +8,6 @@ export default function EditProfile() {
   const { id } = useParams();
   const { push } = useHistory();
   const [user, setUser] = useState();
-  const [address, setAddress] = useState();
-  const [image, setImage] = useState();
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
@@ -37,6 +36,7 @@ export default function EditProfile() {
     Object.entries(user).forEach(([key, value]) => {
       formData.append(key, value);
     });
+    console.log("formdatauser", formData)
     editUser(formData)
       .then(() => {
         push("/userProfile");
@@ -58,12 +58,20 @@ export default function EditProfile() {
         error={errors.name}
       />
       <FormEditProfile
+        name="description"
+        id="description"
+        value={user.description}
+        onChange={onChange}
+        error={errors.description}
+      />
+      <FormEditProfile
         name="address"
         id="address"
         value={user.address}
         onChange={onChange}
-        error={errors.description}
+        error={errors.address}
       />
+
       <FormEditProfile
         name="image"
         id="image"
@@ -71,6 +79,7 @@ export default function EditProfile() {
         error={errors.image}
         type="file"
       />
+      
       <button type="submit" className="btn btn-primary mt-3">
         Edit
       </button>

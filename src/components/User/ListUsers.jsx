@@ -15,7 +15,7 @@ const ListUsers = () => {
 
 
   return (
-    <div>
+    <div className="listUsers"> 
       <User users={users} />
     </div>
   );

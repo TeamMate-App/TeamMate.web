@@ -67,7 +67,7 @@ const Footer = () => {
                                     <a href="https://mountainmadnesss.herokuapp.com/" className="text-white">MountainMadness</a>
                                 </li>
                                 <li>
-                                    <a href="#!" className="text-white">Add Projects</a>
+                                    <a href="https://runeat.herokuapp.com/" className="text-white">RunEat</a>
                                 </li>
                                 <li>
                                     <a href="#!" className="text-white">Add Projects</a>

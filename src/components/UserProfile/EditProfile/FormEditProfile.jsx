@@ -9,7 +9,7 @@ export default function FormElement({
   }) {
     const CustomTag = `${tag}`;
     return (
-      <div className="form-group mt-3">
+      <div className="form-group-editprofile mt-3">
         <label htmlFor={id}>{name}</label>
         <CustomTag
           type={type}

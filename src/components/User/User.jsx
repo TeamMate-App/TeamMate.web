@@ -19,10 +19,7 @@ export default function User() {
 
     <div className="profile-bg container">
       <div className="content-p">
-        <img src={user.image} alt={user.name} />
-        <p className="p-name"><h3 className="h3-name">{user.name}</h3>
-          {user.description}</p>
-        <small>{user.address}</small>
+        <img className="user-image" src={user.image} alt={user.name} />
       </div>
       <LinkToEdit
         id={user.id}
