@@ -34,10 +34,10 @@ const ListGames = () => {
               <GoogleMapReact
                 bootstrapURLKeys={{ key: process.env.REACT_APP_G_MAPS_KEY }}
                 defaultCenter={{
-                  lat: 40,
-                  lng: -3,
+                  lat: 40.4167,
+                  lng: -3.7032,
                 }}
-                defaultZoom={10}
+                defaultZoom={11}
               >
                 {games?.map((game) => (
                   <Marker
