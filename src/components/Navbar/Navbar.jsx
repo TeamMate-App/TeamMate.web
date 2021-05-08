@@ -6,7 +6,7 @@ import { logout } from "../../stores/AccessTokenStore";
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
- 
+
   useEffect(() => {
     $(".navTrigger").click(function () {
       $(this).toggleClass("active");
@@ -24,23 +24,27 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="nav">
+    <nav className="nav p-0">
       <div className="container">
-        <div className="logo">
-          <a href="/">Your Logo</a>
+        <div className="logo" href="/">
+          <a href="/">
+            <img
+              src="https://res.cloudinary.com/teammatereact258/image/upload/v1620485583/Teammate/logo_large_jgs59c.png"
+              alt="logo"
+              style={{ width: 140, height: 50 }}
+            />
+          </a>
         </div>
         <div id="mainListDiv" className="main_list">
           <ul className="navlinks">
             <li>
-              <a href="/">About</a>
+              <a href="/">About Us</a>
             </li>
 
             <li>
               <a href="/">Services</a>
             </li>
-            <li>
-              <a href="/">Contact</a>
-            </li>
+
             <li>
               <a href="/userprofile">Profile</a>
             </li>

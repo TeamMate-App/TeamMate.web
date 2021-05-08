@@ -1,8 +1,10 @@
 import React from "react";
 import "./Home.css";
 import CardsHome from "./CardsHome/CardsHome";
+import Footer from "./Footer/Footer";
 import SearchHome from "./SearchBar/SearchHome";
-import Footer from "./Footer/Footer"
+import SectionHome from "./SectionHome/SectionHome";
+import AboutUsHome from "./SectionHome/AboutUsHome";
 
 const Home = () => {
   return (
@@ -21,31 +23,39 @@ const Home = () => {
                     <SearchHome />
                   </div>
                 </div>
-                <div>
-                  <h1 className="title">TeamMate</h1>
-                  <p>
-                    <strong>
+                <div className="container d-flex justify-content-center">
+                  <div className="login-signup ">
+                    <h1 className="title text-white">TeamMate</h1>
+
+                    <strong className="text-white">
                       Encuentra o crea el deporte que quieres practicar
                     </strong>
-                  </p>
-                  <p>
-                    <a className="btn btn-lg btn btn-light mr-1 " href="/login">
-                      Login
-                    </a>
-                    <a
-                      className="btn btn-lg btn btn-light ml-1"
-                      href="/register"
-                    >
-                      SignUp
-                    </a>
-                  </p>
+
+                    <div className="buttons justify-content-center">
+                      <button
+                        className=" btn btn-lg btn btn-light"
+                        href="/login"
+                      >
+                        Login
+                      </button>
+                      <button
+                        className="  btn btn-lg btn btn-light"
+                        href="/register"
+                      >
+                        SignUp
+                      </button>
+                    </div>
+                  </div>
                 </div>
+                <SectionHome />
+                <AboutUsHome />
               </div>
             </div>
           </div>
         </main>
-      </div>
       <Footer />
+      </div>
+
     </>
   );
 };

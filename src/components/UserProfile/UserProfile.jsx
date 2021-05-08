@@ -17,15 +17,6 @@ const UserProfile = () => {
       <div className="page-heading">
         <div className="media clearfix">
           <div className="media-left pr30">
-
-
-
-
-
-
-
-
-
           </div>
 
           <div className="media-body va-m">
