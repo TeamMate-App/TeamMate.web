@@ -1,4 +1,4 @@
-.backgroundCourt {
+.backgroundCourt1 {
     min-height: 300px;
     height: auto;
     width: 100%;
@@ -8,7 +8,49 @@
     background-size: cover;
     display: block;
     overflow: hidden;
-    background-image: url("./../images//Pista-de-padel-Manza.jpeg");
+    background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620513748/pista-de-padel-manza1_ksmkaz.png");
+
+}
+
+.backgroundCourt2 {
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    overflow: hidden;
+    background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620513752/pista-de-padel-manza__2_uoguca.png");
+
+}
+
+.backgroundCourt3 {
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    overflow: hidden;
+    background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620513765/pista-de-padel-manza__3__xe7pim.png");
+
+}
+
+.backgroundCour4 {
+    min-height: 300px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    overflow: hidden;
+    background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620513780/pista-de-padel-manza__4__hytc0b.png");
 
 }
 
