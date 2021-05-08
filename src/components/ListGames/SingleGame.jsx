@@ -9,41 +9,30 @@ export default function SingleGame({
   id,
   image,
   user,
+  games,
 }) {
+  
   return (
     <>
       <div className="blog-card">
         <div className="meta">
           <div className="photo" style={{ backgroundImage: `url(${image})` }} />
-          <ul className="details">
+         {/*  <ul className="details">
             <li className="date">{date}</li>
-            <li className="tags">
-              <ul>
-                <li>
-                  <a href="/">{id}</a>
-                </li>
-                <li>
-                  <a href="/">Code</a>
-                </li>
-                <li>
-                  <a href="/">HTML</a>
-                </li>
-                <li>
-                  <a href="/">CSS</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+            <li className="tags"></li>
+          </ul> */}
         </div>
-        <div className="description">
+        <div className="description text-black">
           <Link to={`/games/${id}`}>
-            <h1>{name}SINGLE GAME</h1>
+            <h1>{address}</h1>
           </Link>
-          <h2>{address}</h2>
-          <p>{description}</p>
-          <p className="read-more">
+          <h2>{/* 📍 */}{description}</h2>
+          <h2>🕒  {date}</h2>
+
+          <p>{name || "noname"}</p>
+         {/*  <p className="read-more">
             <a href="/">{user}</a>
-          </p>
+          </p> */}
         </div>
       </div>
     </>

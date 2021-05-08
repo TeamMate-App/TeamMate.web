@@ -7,7 +7,6 @@ import LinkToEditGame from "./LinkToEditGame"; */
 import CommentBox from "../Comments/Coments";
 import GoogleMapReact from "google-map-react";
 import image from "./images/ball (1).svg";
-
 import "../ListGames/Events.css";
 import "./../Navbar/Navbar.css";
 import "./GameDetail.css";
@@ -29,6 +28,7 @@ export default function GameDetail() {
     Game?.location.coordinates[0]
   );
   /*   console.log("COOORDINATES ****************************", Game); */
+  
 
   useEffect(() => {
     getMatch(id).then((Game) => setGame(Game));
@@ -67,7 +67,7 @@ export default function GameDetail() {
                     lat: Game?.location.coordinates[0],
                     lng: Game?.location.coordinates[1],
                   }}
-                  defaultZoom={17}
+                  defaultZoom={10}
                 >
                   {Game?.location.coordinates[0] ? (
                     <Marker
@@ -86,9 +86,15 @@ export default function GameDetail() {
               </div>
             </div>
             <div id="sidebar-right">
-              <h2>Comentarios</h2>
+              <h2>Chat</h2>
               <hr></hr>
               <CommentBox user={user} Game={Game} />
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+
             </div>
           </div>
         )}

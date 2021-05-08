@@ -10,7 +10,9 @@ const CardsHome = () => {
           <div className="flip-card-inner">
             <div className="flip-card-front text-decoration:none">
               <Link to="/userProfile">
+              
                 <div className="card-body">
+                
                   <img className="imgCard"
                     src="https://kibotics.org/static/assets/img/profiles/avatar.png"
                     style={{
@@ -80,7 +82,7 @@ const CardsHome = () => {
                     }}
                     alt="Court"
                   ></img>
-                  <h5 className="card-title myprofile-card">My Events</h5>
+                  <h5 className="card-title myprofile-card">Events</h5>
                 </div>
               </Link>
             </div>

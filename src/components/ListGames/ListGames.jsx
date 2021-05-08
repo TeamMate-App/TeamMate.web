@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getGames } from "../../services/GameService";
 import GamesMap from "./GamesMap";
 import "./Events.css";
-import image from "../GameDetail/images/ball (1).svg";
+
 import GoogleMapReact from "google-map-react";
 import "./../Navbar/Navbar.css";
 
@@ -11,6 +11,7 @@ const Marker = ({ children }) => children;
 const ListGames = () => {
   const [games, setGames] = useState([]);
   console.log("Games **********************************", games);
+  /* console.log(games[0].location) */
 
   useEffect(() => {
     getGames(games.body).then((games) => {
@@ -22,12 +23,13 @@ const ListGames = () => {
     <>
       <div className="shownavbar"></div>
       <div className="container">
+      <h2>Busca tu partido más cercano</h2>
+      <hr></hr>
         <div className="row">
           <div className="col-6">
-            <h1>Lista de Eventos</h1>
             <div
               className="container mapDetailGame"
-              style={{ height: "300px", width: "100%" }}
+              style={{ height: "500px", width: "100%" }}
             >
               <GoogleMapReact
                 bootstrapURLKeys={{ key: process.env.REACT_APP_G_MAPS_KEY }}
@@ -35,32 +37,22 @@ const ListGames = () => {
                   lat: 40,
                   lng: -3,
                 }}
-                defaultZoom={17}
+                defaultZoom={10}
               >
-                {games.map((match) => (
+                {games?.map((game) => (
                   <Marker
-                    key={match.id}
-                    lat={match.location.latitude}
-                    lng={match.location.longitude}
+                    key={game.id}
+                    lat={game?.location.coordinates[0]}
+                    lng={game?.location.coordinates[1]}
                   >
                     <button className="crime-marker">
-                      <img src={image} alt="Ball" />
+                      <img
+                        src="https://res.cloudinary.com/teammatereact258/image/upload/v1620506232/ball_baiuaj.png"
+                        alt="Ball"
+                      />
                     </button>
                   </Marker>
                 ))}
-                {/* {Game?.location.latitude[0] ? (
-                    <Marker
-                      lat={Game?.location.latitude[0]}
-                      lng={Game?.location.longitude[0]}
-                      className="p-0"
-                    >
-                      <button className="crime-marker p-0">
-                        <img src={image} alt="ballMark" />
-                      </button>
-                    </Marker>
-                  ) : (
-                    <div></div>
-                  )} */}
               </GoogleMapReact>
             </div>
           </div>
