@@ -22,8 +22,8 @@ export default function User() {
         <img className="user-image" src={user.image} alt={user.name} />
       </div>
       <LinkToEdit
-        id={user.id}
-        User={user.user}
+        id={user?.id}
+        User={user?.user}
       />
     </div>
 
