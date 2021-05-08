@@ -3,13 +3,12 @@ import { getAccessToken, logout } from "../stores/AccessTokenStore";
 
 export const create = (opts = {}) => {
   const http = axios.create({
-    baseURL: "http://localhost:3001/api", //pondremos la dirección de heroku
+    baseURL: `${process.env.REACT_APP_API_HOST}/api`, //pondremos la dirección de heroku
     ...opts,
   });
 
   http.interceptors.request.use((request) => {
     //send token as authirization
- 
 
     if (opts.useAccessToken !== false) {
       request.headers.common.Authorization = `Bearer ${getAccessToken()}`;
@@ -19,7 +18,6 @@ export const create = (opts = {}) => {
 
     return request;
   });
-
 
   //logout
   http.interceptors.response.use(
@@ -31,9 +29,5 @@ export const create = (opts = {}) => {
       return Promise.reject(error);
     }
   );
-  return http
+  return http;
 };
- 
-
-
-

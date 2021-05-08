@@ -10,13 +10,12 @@ const GoogleAuth = () => {
   const { push } = useHistory();
   const { getUser: doLogin } = useUserContext();
   const responseSuccessGoogle = (response) => {
-
     axios({
       method: "POST",
       url: "http://localhost:3001/api/googlelogin",
       data: { tokenId: response.tokenId },
     }).then((response) => {
-      setAccessToken(response.access_token);
+      setAccessToken(response.data.token);
       doLogin().then(() => push("/userprofile"));
     });
   };
