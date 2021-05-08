@@ -1,11 +1,20 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-
-footer {
+/* .footer {
     width: 100%;
     border: 0px;
     background-position: center center;
+    position: relative;
+   
+
+} */
+/* .push{
+  height: 100px;
+}
+ */
+.footer {
+  /*   margin-bottom: 1400px; */
+
+  min-width: 100% !important;
+  position: fixed;
+
 
 }

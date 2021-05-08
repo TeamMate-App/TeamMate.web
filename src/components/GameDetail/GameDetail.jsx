@@ -24,11 +24,11 @@ export default function GameDetail() {
   const { id } = useParams();
   const { push } = useHistory();
 
-
-
-  console.log("GAMEEEEE ****************************", Game?.location.coordinates[0]);
-/*   console.log("COOORDINATES ****************************", Game); */
-
+  console.log(
+    "GAMEEEEE ****************************",
+    Game?.location.coordinates[0]
+  );
+  /*   console.log("COOORDINATES ****************************", Game); */
 
   useEffect(() => {
     getMatch(id).then((Game) => setGame(Game));
@@ -96,49 +96,3 @@ export default function GameDetail() {
     </>
   );
 }
-
-/*
-<div className="blog-card">
-          <div className="meta">
-            <div
-              className="photo"
-              style={{ backgroundImage: `url(${Game.image})` }}
-            />
-            <ul className="details">
-              <li className="au thor"></li>
-              <li className="date"> </li>
-              <li className="tags">
-                <a href="/">{Game.id}</a>
-              </li>
-            </ul>
-          </div>
-          <div className="description">
-            <button
-              type="button"
-              className="close"
-              aria-label="Close"
-              id="hide-sign-close-icon"
-            >
-              <span className="close-icon">
-                <i className="fa fa-times"></i>
-              </span>
-            </button>
-            <h1>{Game.name}SINGLE GAME</h1>
-            <h2>{Game.address}</h2>
-            <p>{Game.description}</p>
-            <div className="read-more">
-              <div>
-                {user?.id === Game?.user ? (
-                  <button className="btn btn-danger" onClick={remove}>
-                    Deleteeee
-                  </button>
-                ) : (
-                  <JoinEvent GameId={Game.id} />
-                )}
-              </div>
-              <div>
-                <LinkToEditGame user={user} Game={Game} />
-              </div>
-            </div>
-          </div>
-        </div> */

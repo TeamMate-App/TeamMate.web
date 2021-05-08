@@ -1,7 +1,7 @@
 import React, { useState } from 'react' 
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-
+import "./DatePicker.css"
 
 const DatePick = () => {
 
@@ -12,9 +12,10 @@ const DatePick = () => {
             <div className="datepicker">
                 <DatePicker selected={selectedDate}
                  onChange={date => setSelectedDate(date)} 
-                 dateFormat='dd/MM/yyyy'
+                 dateFormat= 'dd/MM/yyyy'
                  minDate={new Date()}
-                 placeholderText="Hoy"
+                 placeholderText="  Choose a day..."
+                 className="datepick"
                  />
             </div>
     )

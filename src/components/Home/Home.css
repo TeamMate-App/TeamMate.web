@@ -1,5 +1,5 @@
 .backgroundImg {
-    height: 500px;
+    height: 700px;
     width: 100%;
     max-width: 100%;
     background-position: center center;
@@ -12,7 +12,18 @@
 
 
     background-repeat: repeat-x;
-    animation: animatedBackground 50s  infinite ease-in
+    animation: animatedBackground 50s infinite ease-in
+}
+
+
+
+.login-signup {
+
+    width: 500px;
+    margin-top: 50px;
+    /* max-width: 50%; */
+    background-color: rgba(242, 243, 241, 0.1);
+    border-radius: 20px;
 
 }
 
@@ -21,6 +32,10 @@
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+}
+
+.buttons {
+    padding-top: 10px;
 }
 
 .myprofile {
@@ -33,7 +48,7 @@
         background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409267/Teammate/manuel-pappacena-zTwzxr4BbTA-unsplash_haku6r.jpg");
         background-position: 50%;
         filter: grayscale(50%);
-        
+
     }
 
     27.9999999999% {
@@ -42,14 +57,14 @@
         background-position: 0 0;
         filter: grayscale(0%);
 
-        
+
     }
 
     28% {
         background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409281/Teammate/hermes-rivera-newhL3aprGk-unsplash_talvba.jpg");
         background-position: 0 0;
         filter: grayscale(50%);
-        
+
     }
 
     55.99999999999999% {
@@ -57,7 +72,7 @@
         background-position: 50%;
         filter: grayscale(0%);
 
-       
+
     }
 
     56% {
@@ -73,14 +88,14 @@
         background-position: 0 0;
         filter: grayscale(0%);
 
-        
+
     }
 
     85% {
         background-image: url("https://res.cloudinary.com/teammatereact258/image/upload/v1620409281/Teammate/hermes-rivera-newhL3aprGk-unsplash_talvba.jpg");
         background-position: 0 0;
         filter: grayscale(50%);
-        
+
     }
 
     100% {
@@ -88,6 +103,6 @@
         background-position: 50%;
         filter: grayscale(0%);
 
-       
+
     }
 }

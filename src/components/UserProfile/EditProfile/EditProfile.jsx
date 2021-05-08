@@ -62,7 +62,7 @@ export default function EditProfile() {
         id="address"
         value={user.address}
         onChange={onChange}
-        error={errors.description}
+        error={errors.address}
       />
       <FormEditProfile
         name="image"
@@ -70,6 +70,13 @@ export default function EditProfile() {
         onChange={onChange}
         error={errors.image}
         type="file"
+      />
+      <FormEditProfile
+        name="description"
+        id="description"
+        value={user.description}
+        onChange={onChange}
+        error={errors.description}
       />
       <button type="submit" className="btn btn-primary mt-3">
         Edit
