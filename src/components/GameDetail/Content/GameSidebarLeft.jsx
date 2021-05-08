@@ -8,7 +8,7 @@ const GameSidebarLeft = ({ Game, user, remove, date }) => {
   const hour = moment(Game.date).format("LT")
   
   console.log(day)
-  console.log(Game.date)
+  console.log(Game)
 
 
 
@@ -43,7 +43,7 @@ const GameSidebarLeft = ({ Game, user, remove, date }) => {
                 <td>
                   <i className="fas fa-users"></i>
                 </td>
-                <td className="address">1/4</td>
+                <td className="address">4 max.</td>
               </tr>
               <tr>
                 <td>
@@ -62,12 +62,9 @@ const GameSidebarLeft = ({ Game, user, remove, date }) => {
         </div>
 
         <hr></hr>
-        <h4>Organizador</h4>
-        <p className="p-0"> User creator</p>
-        <p className="p-0">{Game.user}</p>
-        <hr></hr>
+       
 
-        <h4>Maps</h4>
+        <h4>Localization</h4>
       </div>
     </div>
   );

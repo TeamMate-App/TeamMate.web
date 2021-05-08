@@ -42,7 +42,6 @@ const MainContent = ({ Game, user, remove }) => {
 
   const handleUnsubscribe = () => {
     unsubscribe(Game.id, email)
-  
       .then((res) => {
         notify(res);
         setPlayers(players.filter((player) => player.user.id !== user.id));
@@ -55,40 +54,51 @@ const MainContent = ({ Game, user, remove }) => {
       <ToastContainer />
 
       <div>
-        <h2>Vista del campo</h2>
+        <h2>Game field</h2>
         <hr className="mb-0"></hr>
       </div>
-      <div className="backgroundCourt" alt="pista"></div>
-      <div className="container">
-        <h2>Organizador: {players[0]?.user?.name}</h2>
+      {players.length === 1 && (
+        <div className="backgroundCourt1" alt="pista"></div>
+      )}
+      {players.length === 2 && (
+        <div className="backgroundCourt2" alt="pista"></div>
+      )}
+      {players.length === 3 && (
+        <div className="backgroundCourt3" alt="pista"></div>
+      )}
+      {players.length === 4 && (
+        <div className="backgroundCourt4" alt="pista"></div>
+      )}
+      <div className="container mt-2">
+        <h2>Created by: {players[0]?.user?.name}</h2>
+        <hr></hr>
         <div className="">
           {user?.id === Game?.user ? (
             <button className="btn btn-danger" onClick={remove}>
               Deletee
             </button>
           ) : (
-            <button className="btn btn-danger" onClick={handleClick}>
-              Join Event
-            </button>
+            <div>
+              <button className="btn btn-danger" onClick={handleClick}>
+                Join Event
+              </button>
+
+              <button className="btn btn-danger" onClick={handleUnsubscribe}>
+                Unsubscribe
+              </button>
+            </div>
           )}
         </div>
 
-        <button className="btn btn-danger" onClick={handleUnsubscribe}>
-          Unsubscribe
-        </button>
-
-        <h1>Players</h1>
+        <h1>Players: {players.length}</h1>
         <hr></hr>
 
         <div className="row">
-          <div className="col-6">
+          <div className="col-12">
             <h1>{players[0]?.user?.name}</h1>
             <h1>{players[1]?.user?.name}</h1>
             <h1>{players[2]?.user?.name}</h1>
             <h1>{players[3]?.user?.name}</h1>
-          </div>
-          <div className="col-6">
-            <h1>{players[0]?.user?.name}</h1>
           </div>
         </div>
       </div>
