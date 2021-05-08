@@ -1,5 +1,6 @@
 .link-profile-user {
-    color: #7aab5a;
+    color: #e4efdf;;
+    border-radius: 15px;
 }
 
 .p-user-profile {
@@ -20,10 +21,22 @@
 }
 .espace-user {
     text-align: center;
+    color: white;
+    background-color: olivedrab;
+    padding: 10px 15px;
+    border-radius: 10px;
+    
 }
 
 .info {
-    background-color: #7aab5a;
+    background-color: #e4efdf;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    padding-top: 10px; 
+    border-radius: 15px;
+    padding-bottom: 62px;
+}
+.card-info{
+    background-color: black;
 }
 

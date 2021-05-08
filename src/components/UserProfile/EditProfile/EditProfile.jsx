@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { editUser, getUserInfo } from "../../../services/UserService.js";
 import FormEditProfile from "./FormEditProfile";
+import './EditProfile.css'
 
 export default function EditProfile() {
   const { id } = useParams();
@@ -49,40 +50,44 @@ export default function EditProfile() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="container">
-      <FormEditProfile
-        name="name"
-        id="name"
-        value={user.name}
-        onChange={onChange}
-        error={errors.name}
-      />
-      <FormEditProfile
-        name="description"
-        id="description"
-        value={user.description}
-        onChange={onChange}
-        error={errors.description}
-      />
-      <FormEditProfile
-        name="address"
-        id="address"
-        value={user.address}
-        onChange={onChange}
-        error={errors.address}
-      />
+    <div className="">
+      <div className="shownavbar"></div>
+      <div className="edit-user">
+        <form onSubmit={onSubmit} >
+          <FormEditProfile
+            name="Name"
+            id="name"
+            value={user.name}
+            onChange={onChange}
+            error={errors.name}
+          />
+          <FormEditProfile
+            name="Description"
+            id="description"
+            value={user.description}
+            onChange={onChange}
+            error={errors.description}
+          />
+          <FormEditProfile
+            name="Address"
+            id="address"
+            value={user.address}
+            onChange={onChange}
+            error={errors.address}
+          />
 
-      <FormEditProfile
-        name="image"
-        id="image"
-        onChange={onChange}
-        error={errors.image}
-        type="file"
-      />
-      
-      <button type="submit" className="btn btn-primary mt-3">
-        Edit
+          <FormEditProfile
+            name="Image"
+            id="image"
+            onChange={onChange}
+            error={errors.image}
+            type="file"
+          />
+          <button type="submit" className="btn btn-outline-primary mt-3 " >
+            Edit
       </button>
-    </form>
+        </form>
+      </div>
+    </div>
   );
 }

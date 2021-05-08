@@ -3,97 +3,98 @@ import "./SectionHome.css";
 
 const SectionHome = () => {
   return (
-    <div className="mainsection1">
-      <section class="web-design">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12 text-center pb-20 mt-20">
-              <h2 class="title-underline">
-                What we focus on for Website Development?
-              </h2>
+    <div id="section-2" className="mainsection1">
+      <section className="web-design">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 text-center pb-20 mt-20">
+              <h1 className="title-underline pt-4">
+              The most sought after sports facilities
+              </h1>
             </div>
           </div>
 
-          <div class="blog-inner">
-            <div class="blog-slider">
-              <div class="blog-slider__item">
-                <div class="blog-slider__img">
+          <div className="blog-inner">
+            <div className="blog-slider">
+              <div className="blog-slider__item">
+                <div className="blog-slider__img">
                   <img
                     alt="Design"
-                    class="finbyz-zoomin"
-                    src="https://finbyz.tech/files/design.svg"
+                    className="finbyz-zoomin"
+                    src="https://res.cloudinary.com/teammatereact258/image/upload/v1620503206/5_rxueuz.jpg"
                     title="Design"
                   />
                 </div>
 
-                <div class="blog-slider__content">
-                  <div class="blog-slider__title finbyz-fadeinup">Design</div>
+                <div className="blog-slider__content">
+                  <div className="blog-slider__title finbyz-fadeinup">Discover what is Teammate</div>
 
-                  <div class="blog-slider__text finbyz-fadeinup">
+                  <div className="blog-slider__text finbyz-fadeinup">
                     <p>
-                      We offer you a comprehensive design for your website with
-                      impressive layouts. Unlike many other website development
-                      companies, we don’t use themes, but we create a website
-                      from scratch to ensure uniqueness of design aesthetics. By
-                      following the client’s requirements and ongoing market
-                      trends, we give you a user-friendly solution which depicts
-                      your own brand.
+                    <strong>Teammate</strong> is the largest platform to reserve tennis and paddle courts
+                      or soccer fields throughout Spain. Our sports philosophy led us
+                       to understand the need that exists in the habitual player for wanting
+                       reserve tracks online through our app or website. In this way,
+                        we challenge conventional field or track rental processes
+                        so that thousands of players have the possibility to practice their sport
+                         favorite more conveniently and quickly. If you are trying to improve your
+                          paddle tennis, soccer or tennis technique and you love sport, this is your place.
+                           We take care of managing the entire reservation process for
+                           clues so you don't have to worry about a thing.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="blog-slider pt-200">
-              <div class="blog-slider__item ">
-                <div class="blog-slider__img">
+            <div className="blog-slider pt-200">
+              <div className="blog-slider__item ">
+                <div className="blog-slider__img">
                   <img
                     alt="Content"
-                    class="finbyz-zoomin"
-                    src="https://finbyz.tech/files/content.svg"
+                    className="finbyz-zoomin"
+                    src="https://res.cloudinary.com/teammatereact258/image/upload/v1620503206/2_y7cocg.jpg"
                     title="Content"
                   />
                 </div>
 
-                <div class="blog-slider__content">
-                  <div class="blog-slider__title finbyz-fadeinup">Content</div>
+                <div className="blog-slider__content">
+                  <div className="blog-slider__title finbyz-fadeinup">Health</div>
 
-                  <div class="blog-slider__text finbyz-fadeinup">
+                  <div className="blog-slider__text finbyz-fadeinup">
                     <p>
-                      Content is the key element that attracts the attention of
-                      the customers, we provide you with a relevant and strong
-                      creative content that speaks aloud for your operations and
-                      expertise. Giving attention to details we structure the
-                      content to highlight key pointers to readers.
+                    <strong>Teammate</strong> helps you with your health, any body movement that involves energy 
+                    expenditure is called physical activity. Any action that requires an energy 
+                    expenditure above basal metabolism, which is the energy necessary for the 
+                    body to perform basic functions. In this way, Teammate makes it easy for you 
+                    to practice your favorite sport.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="blog-slider pt-200">
-              <div class="blog-slider__item ">
-                <div class="blog-slider__img">
+            <div className="blog-slider pt-200">
+              <div className="blog-slider__item ">
+                <div className="blog-slider__img">
                   <img
                     alt="Graphics"
-                    class="finbyz-zoomin"
-                    src="https://finbyz.tech/files/graphics.svg"
+                    className="finbyz-zoomin"
+                    src="https://res.cloudinary.com/teammatereact258/image/upload/v1620503206/4_uhalyg.jpg"
                     title="Graphics"
                   />
                 </div>
 
-                <div class="blog-slider__content">
-                  <div class="blog-slider__title finbyz-fadeinup">Graphics</div>
+                <div className="blog-slider__content">
+                  <div className="blog-slider__title finbyz-fadeinup">Friends</div>
 
-                  <div class="blog-slider__text finbyz-fadeinup">
+                  <div className="blog-slider__text finbyz-fadeinup">
                     <p>
-                      Instead of images and icons we prefer to use premium
-                      vector graphics for a website wherever it’s possible.
-                      These are robust and scalable light-weight image types,
-                      which remain crystal clear irrespective of screen size. We
-                      combine these advanced technologies with the user-friendly
-                      interface to create robust, scalable and multifunctional
-                      websites.
+                    Playing sports as a team encourages socialization, since new people
+                     are met and a series of memories and experiences shared with the other
+                      are generated. Improve self-esteem. Feeling the support of others can
+                       help you overcome your fears and, consequently, feel comforted.
+                        Promotes health.
                     </p>
                   </div>
                 </div>

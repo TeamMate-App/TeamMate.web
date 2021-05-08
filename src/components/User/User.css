@@ -7,18 +7,17 @@
   
 }
 .user-image{
-  margin: 2px;
+  margin: 43px 10px;
   
 }
 
 .profile-bg img {
-  width: 180px;
+  width: 130px;
   overflow: hidden;
   border-radius: 50%;
 }
 
 .p-name {
   padding: 10px;
-
 }
 

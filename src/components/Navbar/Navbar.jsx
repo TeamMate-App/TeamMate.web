@@ -23,6 +23,18 @@ const Navbar = () => {
     });
   }, []);
 
+  useEffect(() => {
+    $('.js-anchor-link').click(function(e){
+      e.preventDefault();
+      var target = $($(this).attr('href'));
+      if(target.length){
+        var scrollTo = target.offset().top;
+        $('body, html').animate({scrollTop: scrollTo+'px'}, 800);
+      }
+    });
+  }, []);
+
+
   return (
     <nav className="nav p-0">
       <div className="container">
@@ -38,11 +50,11 @@ const Navbar = () => {
         <div id="mainListDiv" className="main_list">
           <ul className="navlinks">
             <li>
-              <a href="/">About Us</a>
+              <a href="#section-1">About Us</a>
             </li>
 
             <li>
-              <a href="/">Services</a>
+              <a href="#section-2">Services</a>
             </li>
 
             <li>

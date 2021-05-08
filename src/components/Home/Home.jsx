@@ -32,18 +32,18 @@ const Home = () => {
                     </strong>
 
                     <div className="buttons justify-content-center">
-                      <button
-                        className=" btn btn-lg btn btn-light"
+                      <a
+                        className=" btn btn-lg btn btn-outline-light"
                         href="/login"
                       >
                         Login
-                      </button>
-                      <button
-                        className="  btn btn-lg btn btn-light"
+                      </a>
+                      <a
+                        className="  btn btn-lg btn btn-outline-light"
                         href="/register"
                       >
                         SignUp
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>

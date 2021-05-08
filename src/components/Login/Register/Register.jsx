@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Login.css";
-import { Link, useHistory } from "react-router-dom";
-import Logo from "../../../assets/Movistar-Logo.png";
+import { useHistory } from "react-router-dom";
+
 import { register } from "../../../services/UserService.js";
 import { setAccessToken } from "../../../stores/AccessTokenStore";
 
@@ -102,13 +102,8 @@ const Login = ({ createUser }) => {
   return (
     <div className="Register">
         <div className="shownavbar"></div>
-
-      <Link to="/" className="">
-        <span className="">Home </span>
-      </Link>
       <main className="form-signin">
         <form onSubmit={onSubmit}>
-          <img className="mb-4" src={Logo} alt="" width="72" height="57" />
           <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
           <div className="form-floating">
