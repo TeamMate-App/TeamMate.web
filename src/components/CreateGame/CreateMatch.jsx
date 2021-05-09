@@ -64,7 +64,7 @@ export default function CreateMatch() {
   const handleClickMap = (location) => {
     const lat = location.lat;
     const lng = location.lng;
-    console.log("onClick map: ", lat, lng);
+    
     console.log(location.lat);
     setLocation({ lat, lng });
   };
