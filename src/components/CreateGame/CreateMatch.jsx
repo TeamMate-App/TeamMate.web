@@ -47,7 +47,7 @@ export default function CreateMatch() {
     formData.append("latitude", location.lat);
     formData.append("longitude", location.lng);
 
-    console.log("match***********************", match);
+    
     postCreateMatch(formData)
       .then(() => {
         push("/");
@@ -64,7 +64,7 @@ export default function CreateMatch() {
   const handleClickMap = (location) => {
     const lat = location.lat;
     const lng = location.lng;
-    console.log("onClick map: ", lat, lng);
+    
     console.log(location.lat);
     setLocation({ lat, lng });
   };
