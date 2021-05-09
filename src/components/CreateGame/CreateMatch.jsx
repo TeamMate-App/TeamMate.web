@@ -65,7 +65,7 @@ export default function CreateMatch() {
     const lat = location.lat;
     const lng = location.lng;
     
-    console.log(location.lat);
+ 
     setLocation({ lat, lng });
   };
 
