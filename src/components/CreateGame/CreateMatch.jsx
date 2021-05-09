@@ -71,6 +71,7 @@ export default function CreateMatch() {
 
   return (
     <>
+    <div className="shownavbar"></div>
       <form onSubmit={onSubmit} className="container">
         <FormCreateMatch
           name="name"
