@@ -47,7 +47,7 @@ export default function CreateMatch() {
     formData.append("latitude", location.lat);
     formData.append("longitude", location.lng);
 
-    console.log("match***********************", match);
+    
     postCreateMatch(formData)
       .then(() => {
         push("/");
