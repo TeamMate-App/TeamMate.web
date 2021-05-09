@@ -106,25 +106,25 @@ export default function CreateMatch() {
           type="datetime-local"
         />
         <FormCreateMatch
-          name="latitude"
+          name=""
           id="location"
           error={errors.image}
           value={location.lat}
-          type="text"
+          type="hidden"
         />
         <FormCreateMatch
-          name="longitude"
+          name=""
           id="location"
           error={errors.image}
           value={location.lng}
-          type="text"
+          type="hidden"
         />
-        <button type="submit" className="btn btn-primary mt-3">
+        <button type="submit" className="btn btn-primary mt-3 but-create">
           Create
         </button>
       </form>
       <div className="container mapbox ">
-        <h1>maps</h1>
+        <h1>Click Your Location</h1>
         <div
           className="container mapDetailGame"
           style={{ height: "300px", width: "100%" }}
@@ -140,7 +140,7 @@ export default function CreateMatch() {
             defaultZoom={17}
           >
             <Marker lat={location.lat} lng={location.lng} className="p-0">
-              <button className="crime-marker p-0">
+              <button className="p-0">
                 <img src={image} alt="ballMark" />
               </button>
             </Marker>
