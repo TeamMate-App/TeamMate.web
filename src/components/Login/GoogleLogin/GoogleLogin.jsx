@@ -12,7 +12,7 @@ const GoogleAuth = () => {
   const responseSuccessGoogle = (response) => {
     axios({
       method: "POST",
-      url: `${process.env.REACT_APP_API_HOST}/api/googlelogin`,
+      url: "http://localhost:3001/api/googlelogin",
       data: { tokenId: response.tokenId },
     }).then((response) => {
       setAccessToken(response.data.token);
