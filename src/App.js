@@ -11,7 +11,7 @@ function App() {
       <AppRouter className="container"/>
       
     </div>
-  );
+  ) ;
 }
 
 export default App;
